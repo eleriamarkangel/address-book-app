@@ -1,0 +1,20 @@
+2026-03-19 11:32:52,971 - logger - INFO - Logger initialized. Log file: logs\app.log
+2026-03-19 11:33:33,460 - logger - INFO - Logger initialized. Log file: logs\app.log
+2026-03-19 11:35:23,557 - logger - INFO - Logger initialized. Log file: logs\app.log
+2026-03-19 11:35:23,574 - logger - INFO - Status Code: 200
+2026-03-19 11:35:23,574 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 40.7128,
+  "longitude": -74.006,
+  "address": {
+    "street": "123 Main St",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10001"
+  }
+}
+2026-03-19 11:35:47,364 - logger - INFO - Logger initialized. Log file: logs\app.log
+2026-03-19 11:35:47,365 - logger - INFO - Retrieved row: (1, 40.7128, -74.006, '{"street": "123 Main St", "city": "New York", "state": "NY", "zip": "10001"}')
+2026-03-19 11:38:42,458 - logger - INFO - Logger initialized. Log file: logs\app.log
+2026-03-19 11:38:55,495 - logger - INFO - Logger initialized. Log file: logs\app.log
+2026-03-19 11:38:55,496 - logger - INFO - Retrieved row: (1, 40.7128, -74.006, '{"street": "123 Main St", "city": "New York", "state": "NY", "zip": "10001"}')
