@@ -1,0 +1,2359 @@
+2026-03-19 11:32:52,971 - logger - INFO - Logger initialized. Log file: logs\app.log
+2026-03-19 11:33:33,460 - logger - INFO - Logger initialized. Log file: logs\app.log
+2026-03-19 11:35:23,557 - logger - INFO - Logger initialized. Log file: logs\app.log
+2026-03-19 11:35:23,574 - logger - INFO - Status Code: 200
+2026-03-19 11:35:23,574 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 40.7128,
+  "longitude": -74.006,
+  "address": {
+    "street": "123 Main St",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10001"
+  }
+}
+2026-03-19 11:35:47,364 - logger - INFO - Logger initialized. Log file: logs\app.log
+2026-03-19 11:35:47,365 - logger - INFO - Retrieved row: (1, 40.7128, -74.006, '{"street": "123 Main St", "city": "New York", "state": "NY", "zip": "10001"}')
+2026-03-19 11:38:42,458 - logger - INFO - Logger initialized. Log file: logs\app.log
+2026-03-19 11:38:55,495 - logger - INFO - Logger initialized. Log file: logs\app.log
+2026-03-19 11:38:55,496 - logger - INFO - Retrieved row: (1, 40.7128, -74.006, '{"street": "123 Main St", "city": "New York", "state": "NY", "zip": "10001"}')
+2026-03-19 11:46:02,451 - logger - INFO - Logger initialized. Log file: logs\app.log
+2026-03-19 11:46:02,471 - logger - INFO - Status Code: 200
+2026-03-19 11:46:02,471 - logger - INFO - Response: {
+  "id": 2,
+  "latitude": 14.5994,
+  "longitude": 120.9842,
+  "address": {
+    "street": "J.P. Laurel Street",
+    "city": "Manila",
+    "country": "Philippines",
+    "landmark": "Malaca\u00f1an Palace"
+  }
+}
+2026-03-19 11:47:29,145 - logger - INFO - Logger initialized. Log file: logs\app.log
+2026-03-19 11:47:32,552 - logger - INFO - Logger initialized. Log file: logs\app.log
+2026-03-19 11:47:40,395 - logger - INFO - Logger initialized. Log file: logs\app.log
+2026-03-19 11:47:48,345 - logger - INFO - Logger initialized. Log file: logs\app.log
+2026-03-19 11:53:28,495 - logger - INFO - Starting address book app
+2026-03-19 11:56:23,054 - logger - INFO - Starting address book app
+2026-03-19 12:05:41,203 - logger - INFO - Starting address book app
+2026-03-19 12:06:34,079 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 12:06:34,079 - logger - INFO - >>> Testing CREATE operation
+2026-03-19 12:06:34,080 - logger - INFO - === TEST: CREATE ===
+2026-03-19 12:06:34,080 - logger - INFO - Method: POST | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 12:06:34,099 - logger - INFO - Status Code: 200
+2026-03-19 12:06:34,099 - logger - INFO - Response: {
+  "id": 3,
+  "latitude": 14.5994,
+  "longitude": 120.9842,
+  "address": {
+    "street": "J.P. Laurel Street",
+    "city": "Manila",
+    "country": "Philippines",
+    "landmark": "Malaca\u00f1an Palace"
+  }
+}
+2026-03-19 12:06:34,099 - logger - INFO - 
+2026-03-19 12:06:34,099 - logger - INFO - >>> Testing READ ALL operation
+2026-03-19 12:06:34,099 - logger - INFO - === TEST: READ ===
+2026-03-19 12:06:34,099 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 12:06:34,102 - logger - INFO - Retrieved 3 geo locations
+2026-03-19 12:06:34,104 - logger - INFO - Status Code: 200
+2026-03-19 12:06:34,104 - logger - INFO - Response: {
+  "total": 3,
+  "data": [
+    {
+      "id": 1,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    },
+    {
+      "id": 2,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malaca\u00f1an Palace"
+      }
+    },
+    {
+      "id": 3,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malaca\u00f1an Palace"
+      }
+    }
+  ]
+}
+2026-03-19 12:06:34,104 - logger - INFO - 
+2026-03-19 12:06:34,104 - logger - INFO - >>> Testing CREATE operation (second record)
+2026-03-19 12:06:34,105 - logger - INFO - === TEST: CREATE ===
+2026-03-19 12:06:34,105 - logger - INFO - Method: POST | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 12:06:34,114 - logger - INFO - Status Code: 200
+2026-03-19 12:06:34,115 - logger - INFO - Response: {
+  "id": 4,
+  "latitude": 40.7128,
+  "longitude": -74.006,
+  "address": {
+    "street": "123 Main St",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10001"
+  }
+}
+2026-03-19 12:06:34,115 - logger - INFO - 
+2026-03-19 12:06:34,115 - logger - INFO - >>> Testing READ ALL operation (after second create)
+2026-03-19 12:06:34,115 - logger - INFO - === TEST: READ ===
+2026-03-19 12:06:34,115 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 12:06:34,118 - logger - INFO - Retrieved 4 geo locations
+2026-03-19 12:06:34,118 - logger - INFO - Status Code: 200
+2026-03-19 12:06:34,119 - logger - INFO - Response: {
+  "total": 4,
+  "data": [
+    {
+      "id": 1,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    },
+    {
+      "id": 2,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malaca\u00f1an Palace"
+      }
+    },
+    {
+      "id": 3,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malaca\u00f1an Palace"
+      }
+    },
+    {
+      "id": 4,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    }
+  ]
+}
+2026-03-19 12:06:34,121 - logger - INFO - === TEST: READ ===
+2026-03-19 12:06:34,121 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 12:06:34,123 - logger - INFO - Retrieved 4 geo locations
+2026-03-19 12:06:34,124 - logger - INFO - Status Code: 200
+2026-03-19 12:06:34,124 - logger - INFO - Response: {
+  "total": 4,
+  "data": [
+    {
+      "id": 1,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    },
+    {
+      "id": 2,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malaca\u00f1an Palace"
+      }
+    },
+    {
+      "id": 3,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malaca\u00f1an Palace"
+      }
+    },
+    {
+      "id": 4,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    }
+  ]
+}
+2026-03-19 12:09:48,109 - logger - INFO - Starting address book app
+2026-03-19 12:09:51,900 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 12:09:51,900 - logger - INFO - >>> Testing READ ALL operation (after second create)
+2026-03-19 12:09:51,901 - logger - INFO - === TEST: READ ===
+2026-03-19 12:09:51,901 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 12:09:51,908 - logger - INFO - Retrieved 4 geo locations
+2026-03-19 12:09:51,909 - logger - INFO - Status Code: 200
+2026-03-19 12:09:51,909 - logger - INFO - Response: {
+  "total": 4,
+  "data": [
+    {
+      "id": 1,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    },
+    {
+      "id": 2,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malaca\u00f1an Palace"
+      }
+    },
+    {
+      "id": 3,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malaca\u00f1an Palace"
+      }
+    },
+    {
+      "id": 4,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    }
+  ]
+}
+2026-03-19 12:10:08,944 - logger - INFO - Starting address book app
+2026-03-19 12:10:15,848 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 12:10:15,848 - logger - INFO - >>> Testing READ ALL operation (after second create)
+2026-03-19 12:10:15,848 - logger - INFO - === TEST: READ ===
+2026-03-19 12:10:15,849 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 12:10:15,855 - logger - INFO - Retrieved 4 geo locations
+2026-03-19 12:10:15,857 - logger - INFO - Status Code: 200
+2026-03-19 12:10:15,857 - logger - INFO - Response: {
+  "total": 4,
+  "data": [
+    {
+      "id": 1,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    },
+    {
+      "id": 2,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malaca\u00f1an Palace"
+      }
+    },
+    {
+      "id": 3,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malaca\u00f1an Palace"
+      }
+    },
+    {
+      "id": 4,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    }
+  ]
+}
+2026-03-19 13:38:45,726 - logger - INFO - Starting address book app
+2026-03-19 13:38:49,404 - logger - INFO - Starting address book app
+2026-03-19 13:38:55,579 - logger - INFO - Starting address book app
+2026-03-19 13:40:57,912 - logger - INFO - Starting address book app
+2026-03-19 13:41:10,408 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 13:41:10,408 - logger - INFO - >>> Testing READ ALL operation...
+2026-03-19 13:41:10,409 - logger - INFO - === TEST: READ ===
+2026-03-19 13:41:10,409 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 13:41:10,416 - logger - INFO - Retrieved 4 geo locations
+2026-03-19 13:41:10,418 - logger - INFO - Status Code: 200
+2026-03-19 13:41:10,418 - logger - INFO - Response: {
+  "total": 4,
+  "data": [
+    {
+      "id": 1,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    },
+    {
+      "id": 2,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malaca\u00f1an Palace"
+      }
+    },
+    {
+      "id": 3,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malaca\u00f1an Palace"
+      }
+    },
+    {
+      "id": 4,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    }
+  ]
+}
+2026-03-19 13:41:10,419 - logger - INFO - === TEST: READ ===
+2026-03-19 13:41:10,419 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 13:41:10,421 - logger - INFO - Retrieved 4 geo locations
+2026-03-19 13:41:10,422 - logger - INFO - Status Code: 200
+2026-03-19 13:41:10,422 - logger - INFO - Response: {
+  "total": 4,
+  "data": [
+    {
+      "id": 1,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    },
+    {
+      "id": 2,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malaca\u00f1an Palace"
+      }
+    },
+    {
+      "id": 3,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malaca\u00f1an Palace"
+      }
+    },
+    {
+      "id": 4,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    }
+  ]
+}
+2026-03-19 13:41:55,652 - logger - INFO - Starting address book app
+2026-03-19 13:45:24,995 - logger - INFO - Starting address book app
+2026-03-19 13:45:36,237 - logger - INFO - Starting address book app
+2026-03-19 13:45:43,473 - logger - INFO - Starting address book app
+2026-03-19 13:45:46,809 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 13:45:46,809 - logger - INFO - >>> Testing READ ALL operation
+2026-03-19 13:45:46,810 - logger - INFO - === TEST: READ ===
+2026-03-19 13:45:46,810 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 13:45:46,816 - logger - INFO - Retrieved 4 geo locations
+2026-03-19 13:45:46,818 - logger - INFO - Status Code: 200
+2026-03-19 13:45:46,818 - logger - INFO - Response: {
+  "total": 4,
+  "data": [
+    {
+      "id": 1,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    },
+    {
+      "id": 2,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malaca\u00f1an Palace"
+      }
+    },
+    {
+      "id": 3,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malaca\u00f1an Palace"
+      }
+    },
+    {
+      "id": 4,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    }
+  ]
+}
+2026-03-19 13:45:46,818 - logger - INFO - 
+2026-03-19 13:45:46,818 - logger - INFO - >>> Testing READ ONE operation
+2026-03-19 13:45:46,819 - logger - INFO - === TEST: READ ===
+2026-03-19 13:45:46,819 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 13:45:46,821 - logger - INFO - Retrieved geo location ID: 1
+2026-03-19 13:45:46,822 - logger - INFO - Status Code: 200
+2026-03-19 13:45:46,822 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 40.7128,
+  "longitude": -74.006,
+  "address": {
+    "street": "123 Main St",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10001"
+  }
+}
+2026-03-19 13:45:46,822 - logger - INFO - >>> Testing READ by invalid ID (ID: 9999)
+2026-03-19 13:45:46,822 - logger - INFO - === TEST: READ ===
+2026-03-19 13:45:46,823 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/9999
+2026-03-19 13:45:46,824 - logger - WARNING - Geo location with ID 9999 not found
+2026-03-19 13:45:46,825 - logger - INFO - Status Code: 404
+2026-03-19 13:45:46,825 - logger - ERROR - Error Response: {"detail":"Geo location with ID 9999 not found"}
+2026-03-19 13:45:46,825 - logger - INFO - 
+2026-03-19 13:47:10,017 - logger - INFO - Starting address book app
+2026-03-19 13:47:46,893 - logger - INFO - Starting address book app
+2026-03-19 13:52:35,858 - logger - INFO - Starting address book app
+2026-03-19 13:52:39,963 - logger - INFO - Starting address book app
+2026-03-19 13:52:49,399 - logger - INFO - Starting address book app
+2026-03-19 13:53:05,180 - logger - INFO - Starting address book app
+2026-03-19 13:53:13,481 - logger - INFO - Starting address book app
+2026-03-19 13:55:51,415 - logger - INFO - Starting address book app
+2026-03-19 13:58:21,726 - logger - INFO - Starting address book app
+2026-03-19 13:58:28,638 - logger - INFO - Starting address book app
+2026-03-19 14:02:35,468 - logger - INFO - Starting address book app
+2026-03-19 14:03:30,819 - logger - INFO - Starting address book app
+2026-03-19 14:12:15,409 - logger - INFO - Starting address book app
+2026-03-19 14:12:29,261 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 14:12:29,261 - logger - INFO - === TEST: READ ===
+2026-03-19 14:12:29,261 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:12:29,268 - logger - INFO - Retrieved geo location ID: 1
+2026-03-19 14:12:29,270 - logger - INFO - Status Code: 200
+2026-03-19 14:12:29,270 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 40.7128,
+  "longitude": -74.006,
+  "address": {
+    "street": "123 Main St",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10001"
+  }
+}
+2026-03-19 14:12:29,270 - logger - INFO - >>> Step 2: UPDATE the record (ID: ) <<<
+2026-03-19 14:12:29,270 - logger - INFO - === TEST: UPDATE ===
+2026-03-19 14:12:29,270 - logger - INFO - Method: PUT | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:12:29,280 - logger - INFO - Updated geo location ID: 1
+2026-03-19 14:12:29,281 - logger - INFO - Status Code: 200
+2026-03-19 14:12:29,282 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 14.596,
+  "longitude": 120.987,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila",
+    "country": "Philippines",
+    "landmark": "Malacanyang Palace - Main Gate"
+  }
+}
+2026-03-19 14:12:29,282 - logger - INFO - 
+2026-03-19 14:12:29,282 - logger - INFO - >>> Step 3: READ the updated record (ID:) - Verify changes <<<
+2026-03-19 14:12:29,282 - logger - INFO - === TEST: READ ===
+2026-03-19 14:12:29,282 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:12:29,285 - logger - INFO - Retrieved geo location ID: 1
+2026-03-19 14:12:29,286 - logger - INFO - Status Code: 200
+2026-03-19 14:12:29,286 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 14.596,
+  "longitude": 120.987,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila",
+    "country": "Philippines",
+    "landmark": "Malacanyang Palace - Main Gate"
+  }
+}
+2026-03-19 14:12:29,286 - logger - INFO - 
+2026-03-19 14:12:29,286 - logger - INFO - 
+2026-03-19 14:13:27,134 - logger - INFO - Starting address book app
+2026-03-19 14:13:36,436 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 14:13:36,437 - logger - INFO - === TEST: READ ===
+2026-03-19 14:13:36,437 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:13:36,443 - logger - INFO - Retrieved geo location ID: 1
+2026-03-19 14:13:36,444 - logger - INFO - Status Code: 200
+2026-03-19 14:13:36,445 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 14.596,
+  "longitude": 120.987,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila",
+    "country": "Philippines",
+    "landmark": "Malacanyang Palace - Main Gate"
+  }
+}
+2026-03-19 14:13:36,445 - logger - INFO - >>> Step 2: UPDATE the record (ID: ) <<<
+2026-03-19 14:13:36,445 - logger - INFO - === TEST: UPDATE ===
+2026-03-19 14:13:36,445 - logger - INFO - Method: PUT | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:13:36,448 - logger - INFO - Status Code: 400
+2026-03-19 14:13:36,448 - logger - ERROR - Error Response: {"detail":"Missing required fields: latitude, longitude, address"}
+2026-03-19 14:13:36,448 - logger - INFO - 
+2026-03-19 14:13:36,448 - logger - INFO - >>> Step 3: READ the updated record (ID:) - Verify changes <<<
+2026-03-19 14:13:36,448 - logger - INFO - === TEST: READ ===
+2026-03-19 14:13:36,448 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:13:36,450 - logger - INFO - Retrieved geo location ID: 1
+2026-03-19 14:13:36,451 - logger - INFO - Status Code: 200
+2026-03-19 14:13:36,451 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 14.596,
+  "longitude": 120.987,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila",
+    "country": "Philippines",
+    "landmark": "Malacanyang Palace - Main Gate"
+  }
+}
+2026-03-19 14:13:36,452 - logger - INFO - 
+2026-03-19 14:13:36,452 - logger - INFO - 
+2026-03-19 14:15:05,632 - logger - INFO - Starting address book app
+2026-03-19 14:15:38,059 - logger - INFO - Starting address book app
+2026-03-19 14:15:39,384 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 14:15:39,384 - logger - INFO - === TEST: READ ===
+2026-03-19 14:15:39,384 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:15:39,390 - logger - INFO - Retrieved geo location ID: 1
+2026-03-19 14:15:39,391 - logger - INFO - Status Code: 200
+2026-03-19 14:15:39,391 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 14.596,
+  "longitude": 120.987,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila",
+    "country": "Philippines",
+    "landmark": "Malacanyang Palace - Main Gate"
+  }
+}
+2026-03-19 14:15:39,392 - logger - INFO - >>> Step 2: UPDATE the record (ID: ) <<<
+2026-03-19 14:15:39,392 - logger - INFO - === TEST: UPDATE ===
+2026-03-19 14:15:39,392 - logger - INFO - Method: PUT | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:15:39,394 - logger - INFO - Status Code: 400
+2026-03-19 14:15:39,394 - logger - ERROR - Error Response: {"detail":"Missing required fields to update: latitude, longitude, address"}
+2026-03-19 14:15:39,395 - logger - INFO - 
+2026-03-19 14:15:39,395 - logger - INFO - >>> Step 3: READ the updated record (ID:) - Verify changes <<<
+2026-03-19 14:15:39,395 - logger - INFO - === TEST: READ ===
+2026-03-19 14:15:39,395 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:15:39,397 - logger - INFO - Retrieved geo location ID: 1
+2026-03-19 14:15:39,398 - logger - INFO - Status Code: 200
+2026-03-19 14:15:39,398 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 14.596,
+  "longitude": 120.987,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila",
+    "country": "Philippines",
+    "landmark": "Malacanyang Palace - Main Gate"
+  }
+}
+2026-03-19 14:15:39,398 - logger - INFO - 
+2026-03-19 14:15:39,398 - logger - INFO - 
+2026-03-19 14:16:48,445 - logger - INFO - Starting address book app
+2026-03-19 14:16:49,920 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 14:16:49,921 - logger - INFO - === TEST: READ ===
+2026-03-19 14:16:49,921 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:16:49,928 - logger - INFO - Retrieved geo location ID: 1
+2026-03-19 14:16:49,929 - logger - INFO - Status Code: 200
+2026-03-19 14:16:49,929 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 14.596,
+  "longitude": 120.987,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila",
+    "country": "Philippines",
+    "landmark": "Malacanyang Palace - Main Gate"
+  }
+}
+2026-03-19 14:16:49,930 - logger - INFO - >>> Step 2: UPDATE the record (ID: ) <<<
+2026-03-19 14:16:49,930 - logger - INFO - === TEST: UPDATE ===
+2026-03-19 14:16:49,930 - logger - INFO - Method: PUT | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:16:49,938 - logger - INFO - Updated geo location ID: 1
+2026-03-19 14:16:49,940 - logger - INFO - Status Code: 200
+2026-03-19 14:16:49,940 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 1.0273,
+  "longitude": 120.987,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila"
+  }
+}
+2026-03-19 14:16:49,940 - logger - INFO - 
+2026-03-19 14:16:49,940 - logger - INFO - >>> Step 3: READ the updated record (ID:) - Verify changes <<<
+2026-03-19 14:16:49,940 - logger - INFO - === TEST: READ ===
+2026-03-19 14:16:49,940 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:16:49,943 - logger - INFO - Retrieved geo location ID: 1
+2026-03-19 14:16:49,944 - logger - INFO - Status Code: 200
+2026-03-19 14:16:49,944 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 1.0273,
+  "longitude": 120.987,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila"
+  }
+}
+2026-03-19 14:16:49,944 - logger - INFO - 
+2026-03-19 14:16:49,944 - logger - INFO - 
+2026-03-19 14:18:28,927 - logger - INFO - Starting address book app
+2026-03-19 14:18:31,176 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 14:18:31,176 - logger - INFO - === TEST: READ ===
+2026-03-19 14:18:31,176 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:18:31,183 - logger - INFO - Retrieved geo location ID: 1
+2026-03-19 14:18:31,184 - logger - INFO - Status Code: 200
+2026-03-19 14:18:31,184 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 1.0273,
+  "longitude": 120.987,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila"
+  }
+}
+2026-03-19 14:18:31,184 - logger - INFO - >>> Step 2: UPDATE the record (ID: ) <<<
+2026-03-19 14:18:31,185 - logger - INFO - === TEST: UPDATE ===
+2026-03-19 14:18:31,185 - logger - INFO - Method: PUT | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:18:31,198 - logger - INFO - Updated geo location ID: 1
+2026-03-19 14:18:31,199 - logger - INFO - Status Code: 200
+2026-03-19 14:18:31,199 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 1.0273,
+  "longitude": 1.2084,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila"
+  }
+}
+2026-03-19 14:18:31,200 - logger - INFO - 
+2026-03-19 14:18:31,200 - logger - INFO - >>> Step 3: READ the updated record (ID:) - Verify changes <<<
+2026-03-19 14:18:31,200 - logger - INFO - === TEST: READ ===
+2026-03-19 14:18:31,200 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:18:31,202 - logger - INFO - Retrieved geo location ID: 1
+2026-03-19 14:18:31,203 - logger - INFO - Status Code: 200
+2026-03-19 14:18:31,203 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 1.0273,
+  "longitude": 1.2084,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila"
+  }
+}
+2026-03-19 14:18:31,204 - logger - INFO - 
+2026-03-19 14:18:31,204 - logger - INFO - 
+2026-03-19 14:19:32,110 - logger - INFO - Starting address book app
+2026-03-19 14:19:33,336 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 14:19:33,336 - logger - INFO - === TEST: READ ===
+2026-03-19 14:19:33,336 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:19:33,342 - logger - INFO - Retrieved geo location ID: 1
+2026-03-19 14:19:33,344 - logger - INFO - Status Code: 200
+2026-03-19 14:19:33,344 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 1.0273,
+  "longitude": 1.2084,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila"
+  }
+}
+2026-03-19 14:19:33,344 - logger - INFO - >>> Step 2: UPDATE the record (ID: ) <<<
+2026-03-19 14:19:33,344 - logger - INFO - === TEST: UPDATE ===
+2026-03-19 14:19:33,344 - logger - INFO - Method: PUT | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:19:33,347 - logger - INFO - Updated geo location ID: 1
+2026-03-19 14:19:33,348 - logger - INFO - Status Code: 200
+2026-03-19 14:19:33,348 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 1.0273,
+  "longitude": 1.2084,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila"
+  }
+}
+2026-03-19 14:19:33,348 - logger - INFO - 
+2026-03-19 14:19:33,349 - logger - INFO - >>> Step 3: READ the updated record (ID:) - Verify changes <<<
+2026-03-19 14:19:33,349 - logger - INFO - === TEST: READ ===
+2026-03-19 14:19:33,349 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:19:33,351 - logger - INFO - Retrieved geo location ID: 1
+2026-03-19 14:19:33,352 - logger - INFO - Status Code: 200
+2026-03-19 14:19:33,352 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 1.0273,
+  "longitude": 1.2084,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila"
+  }
+}
+2026-03-19 14:19:33,352 - logger - INFO - 
+2026-03-19 14:19:33,352 - logger - INFO - 
+2026-03-19 14:35:40,047 - logger - INFO - Starting address book app
+2026-03-19 14:35:44,163 - logger - INFO - Starting address book app
+2026-03-19 14:35:52,976 - logger - INFO - Starting address book app
+2026-03-19 14:37:22,914 - logger - INFO - Starting address book app
+2026-03-19 14:37:30,919 - logger - INFO - Starting address book app
+2026-03-19 14:38:38,620 - logger - INFO - Starting address book app
+2026-03-19 14:38:48,870 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 14:38:48,870 - logger - INFO - === TEST: READ ===
+2026-03-19 14:38:48,870 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:38:48,877 - logger - INFO - Retrieved geo location ID: 1
+2026-03-19 14:38:48,878 - logger - INFO - Status Code: 200
+2026-03-19 14:38:48,878 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 1.0273,
+  "longitude": 1.2084,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila"
+  }
+}
+2026-03-19 14:38:48,879 - logger - INFO - >>> Step 2: DELETE the record (ID: 1) <<<
+2026-03-19 14:38:48,879 - logger - INFO - === TEST: DELETE ===
+2026-03-19 14:38:48,879 - logger - INFO - Method: DELETE | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:38:48,892 - logger - INFO - Deleted geo location ID: 1
+2026-03-19 14:38:48,893 - logger - INFO - Status Code: 200
+2026-03-19 14:38:48,893 - logger - INFO - Response: {
+  "message": "Geo location with ID 1 deleted successfully"
+}
+2026-03-19 14:38:48,894 - logger - INFO - 
+2026-03-19 14:38:48,894 - logger - INFO - === TEST: READ ===
+2026-03-19 14:38:48,894 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:38:48,897 - logger - WARNING - Geo location with ID 1 not found
+2026-03-19 14:38:48,898 - logger - INFO - Status Code: 404
+2026-03-19 14:38:48,898 - logger - ERROR - Error Response: {"detail":"Geo location with ID 1 not found"}
+2026-03-19 14:38:48,898 - logger - INFO - 
+2026-03-19 14:38:48,898 - logger - INFO - 
+2026-03-19 14:47:30,482 - logger - INFO - Starting address book app
+2026-03-19 14:47:33,983 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 14:47:33,983 - logger - INFO - === TEST: READ ===
+2026-03-19 14:47:33,983 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:47:33,990 - logger - WARNING - Geo location with ID 1 not found
+2026-03-19 14:47:33,991 - logger - INFO - Status Code: 404
+2026-03-19 14:47:33,991 - logger - ERROR - Error Response: {"detail":"Geo location with ID 1 not found"}
+2026-03-19 14:48:15,364 - logger - INFO - Starting address book app
+2026-03-19 14:48:16,349 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 14:48:16,349 - logger - INFO - === TEST: READ ===
+2026-03-19 14:48:16,349 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 14:48:16,356 - logger - INFO - Retrieved 3 geo locations
+2026-03-19 14:48:16,357 - logger - INFO - Status Code: 200
+2026-03-19 14:48:16,357 - logger - INFO - Response: {
+  "total": 3,
+  "data": [
+    {
+      "id": 2,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malaca\u00f1an Palace"
+      }
+    },
+    {
+      "id": 3,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malaca\u00f1an Palace"
+      }
+    },
+    {
+      "id": 4,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    }
+  ]
+}
+2026-03-19 14:48:16,358 - logger - INFO - 
+2026-03-19 14:53:24,013 - logger - INFO - Starting address book app
+2026-03-19 14:53:26,108 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 14:53:26,108 - logger - INFO - === TEST: DELETE ===
+2026-03-19 14:53:26,108 - logger - INFO - Method: DELETE | URL: http://127.0.0.1:8000/geo-loc/2
+2026-03-19 14:53:26,126 - logger - INFO - Deleted geo location ID: 2
+2026-03-19 14:53:26,128 - logger - INFO - Status Code: 200
+2026-03-19 14:53:26,128 - logger - INFO - Response: {
+  "message": "Geo location with ID 2 deleted successfully"
+}
+2026-03-19 14:53:26,128 - logger - INFO - === TEST: READ ===
+2026-03-19 14:53:26,128 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 14:53:26,131 - logger - INFO - Retrieved 2 geo locations
+2026-03-19 14:53:26,132 - logger - INFO - Status Code: 200
+2026-03-19 14:53:26,133 - logger - INFO - Response: {
+  "total": 2,
+  "data": [
+    {
+      "id": 3,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malaca\u00f1an Palace"
+      }
+    },
+    {
+      "id": 4,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    }
+  ]
+}
+2026-03-19 14:53:26,133 - logger - INFO - 
+2026-03-19 14:53:49,219 - logger - INFO - Starting address book app
+2026-03-19 14:56:22,817 - logger - INFO - Starting address book app
+2026-03-19 14:56:49,092 - logger - INFO - Starting address book app
+2026-03-19 14:56:50,072 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 14:56:50,073 - logger - INFO - === TEST: READ ===
+2026-03-19 14:56:50,073 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 14:56:50,079 - logger - INFO - Retrieved 2 geo locations
+2026-03-19 14:56:50,080 - logger - INFO - Status Code: 200
+2026-03-19 14:56:50,081 - logger - INFO - Response: {
+  "total": 2,
+  "data": [
+    {
+      "id": 3,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malaca\u00f1an Palace"
+      }
+    },
+    {
+      "id": 4,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    }
+  ]
+}
+2026-03-19 14:56:50,081 - logger - INFO - === TEST: UPDATE ===
+2026-03-19 14:56:50,081 - logger - INFO - Method: PUT | URL: http://127.0.0.1:8000/geo-loc/3
+2026-03-19 14:56:50,094 - logger - INFO - Updated geo location ID: 3
+2026-03-19 14:56:50,096 - logger - INFO - Status Code: 200
+2026-03-19 14:56:50,096 - logger - INFO - Response: {
+  "id": 3,
+  "latitude": 14.5994,
+  "longitude": 120.9842,
+  "address": {
+    "street": "J.P. Laurel Street",
+    "city": "Manila",
+    "country": "Philippines",
+    "landmark": "Malacanan Palace"
+  }
+}
+2026-03-19 14:56:50,096 - logger - INFO - === TEST: READ ===
+2026-03-19 14:56:50,096 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 14:56:50,098 - logger - INFO - Retrieved 2 geo locations
+2026-03-19 14:56:50,099 - logger - INFO - Status Code: 200
+2026-03-19 14:56:50,100 - logger - INFO - Response: {
+  "total": 2,
+  "data": [
+    {
+      "id": 3,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malacanan Palace"
+      }
+    },
+    {
+      "id": 4,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    }
+  ]
+}
+2026-03-19 14:56:50,100 - logger - INFO - 
+2026-03-19 15:00:47,059 - logger - INFO - Starting address book app
+2026-03-19 15:00:51,519 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 15:00:51,519 - logger - INFO - === TEST: CREATE ===
+2026-03-19 15:00:51,519 - logger - INFO - Method: POST | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 15:00:51,539 - logger - INFO - Status Code: 200
+2026-03-19 15:00:51,539 - logger - INFO - Response: {
+  "id": 5,
+  "latitude": 14.602,
+  "longitude": 120.985,
+  "address": {
+    "street": "San Miguel Avenue",
+    "city": "Manila",
+    "country": "Philippines",
+    "landmark": "San Miguel Parish Church"
+  }
+}
+2026-03-19 15:00:51,539 - logger - INFO - === TEST: READ ===
+2026-03-19 15:00:51,539 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 15:00:51,542 - logger - INFO - Retrieved 3 geo locations
+2026-03-19 15:00:51,543 - logger - INFO - Status Code: 200
+2026-03-19 15:00:51,543 - logger - INFO - Response: {
+  "total": 3,
+  "data": [
+    {
+      "id": 3,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malacanan Palace"
+      }
+    },
+    {
+      "id": 4,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    },
+    {
+      "id": 5,
+      "latitude": 14.602,
+      "longitude": 120.985,
+      "address": {
+        "street": "San Miguel Avenue",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "San Miguel Parish Church"
+      }
+    }
+  ]
+}
+2026-03-19 15:00:51,544 - logger - INFO - 
+2026-03-19 15:01:14,750 - logger - INFO - Starting address book app
+2026-03-19 15:02:01,050 - logger - INFO - Starting address book app
+2026-03-19 15:02:03,265 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 15:02:03,265 - logger - INFO - === TEST: CREATE ===
+2026-03-19 15:02:03,265 - logger - INFO - Method: POST | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 15:02:03,280 - logger - INFO - Status Code: 200
+2026-03-19 15:02:03,280 - logger - INFO - Response: {
+  "id": 6,
+  "latitude": 14.5975,
+  "longitude": 120.99,
+  "address": {
+    "street": "Quezon Boulevard",
+    "city": "Manila",
+    "country": "Philippines",
+    "landmark": "Philippine National Police Headquarters"
+  }
+}
+2026-03-19 15:02:03,280 - logger - INFO - === TEST: READ ===
+2026-03-19 15:02:03,280 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 15:02:03,284 - logger - INFO - Retrieved 4 geo locations
+2026-03-19 15:02:03,285 - logger - INFO - Status Code: 200
+2026-03-19 15:02:03,285 - logger - INFO - Response: {
+  "total": 4,
+  "data": [
+    {
+      "id": 3,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malacanan Palace"
+      }
+    },
+    {
+      "id": 4,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    },
+    {
+      "id": 5,
+      "latitude": 14.602,
+      "longitude": 120.985,
+      "address": {
+        "street": "San Miguel Avenue",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "San Miguel Parish Church"
+      }
+    },
+    {
+      "id": 6,
+      "latitude": 14.5975,
+      "longitude": 120.99,
+      "address": {
+        "street": "Quezon Boulevard",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Philippine National Police Headquarters"
+      }
+    }
+  ]
+}
+2026-03-19 15:02:03,285 - logger - INFO - 
+2026-03-19 15:02:03,285 - logger - INFO - All tests completed!
+2026-03-19 15:03:55,109 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 15:03:55,109 - logger - INFO - === TEST: CREATE ===
+2026-03-19 15:03:55,110 - logger - INFO - Method: POST | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 15:03:55,124 - logger - INFO - Status Code: 200
+2026-03-19 15:03:55,125 - logger - INFO - Response: {
+  "id": 7,
+  "latitude": 14.5975,
+  "longitude": 120.99,
+  "address": {
+    "street": "Quezon Boulevard",
+    "city": "Manila",
+    "country": "Philippines",
+    "landmark": "Philippine National Police Headquarters"
+  }
+}
+2026-03-19 15:03:55,125 - logger - INFO - === TEST: READ ===
+2026-03-19 15:03:55,125 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 15:03:55,127 - logger - INFO - Retrieved 5 geo locations
+2026-03-19 15:03:55,128 - logger - INFO - Status Code: 200
+2026-03-19 15:03:55,129 - logger - INFO - Response: {
+  "total": 5,
+  "data": [
+    {
+      "id": 3,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malacanan Palace"
+      }
+    },
+    {
+      "id": 4,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    },
+    {
+      "id": 5,
+      "latitude": 14.602,
+      "longitude": 120.985,
+      "address": {
+        "street": "San Miguel Avenue",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "San Miguel Parish Church"
+      }
+    },
+    {
+      "id": 6,
+      "latitude": 14.5975,
+      "longitude": 120.99,
+      "address": {
+        "street": "Quezon Boulevard",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Philippine National Police Headquarters"
+      }
+    },
+    {
+      "id": 7,
+      "latitude": 14.5975,
+      "longitude": 120.99,
+      "address": {
+        "street": "Quezon Boulevard",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Philippine National Police Headquarters"
+      }
+    }
+  ]
+}
+2026-03-19 15:03:55,129 - logger - INFO - 
+2026-03-19 15:03:55,129 - logger - INFO - All tests completed!
+2026-03-19 15:06:03,016 - logger - INFO - Starting address book app
+2026-03-19 15:06:07,420 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 15:06:07,421 - logger - INFO - === TEST: CREATE ===
+2026-03-19 15:06:07,421 - logger - INFO - Method: POST | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 15:06:07,440 - logger - INFO - Status Code: 200
+2026-03-19 15:06:07,440 - logger - INFO - Response: {
+  "id": 8,
+  "latitude": 40.7505,
+  "longitude": -73.9934,
+  "address": {
+    "street": "1 Central Park West",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10023",
+    "landmark": "Central Park"
+  }
+}
+2026-03-19 15:06:07,440 - logger - INFO - === TEST: READ ===
+2026-03-19 15:06:07,440 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 15:06:07,443 - logger - INFO - Retrieved 6 geo locations
+2026-03-19 15:06:07,445 - logger - INFO - Status Code: 200
+2026-03-19 15:06:07,445 - logger - INFO - Response: {
+  "total": 6,
+  "data": [
+    {
+      "id": 3,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malacanan Palace"
+      }
+    },
+    {
+      "id": 4,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    },
+    {
+      "id": 5,
+      "latitude": 14.602,
+      "longitude": 120.985,
+      "address": {
+        "street": "San Miguel Avenue",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "San Miguel Parish Church"
+      }
+    },
+    {
+      "id": 6,
+      "latitude": 14.5975,
+      "longitude": 120.99,
+      "address": {
+        "street": "Quezon Boulevard",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Philippine National Police Headquarters"
+      }
+    },
+    {
+      "id": 7,
+      "latitude": 14.5975,
+      "longitude": 120.99,
+      "address": {
+        "street": "Quezon Boulevard",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Philippine National Police Headquarters"
+      }
+    },
+    {
+      "id": 8,
+      "latitude": 40.7505,
+      "longitude": -73.9934,
+      "address": {
+        "street": "1 Central Park West",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10023",
+        "landmark": "Central Park"
+      }
+    }
+  ]
+}
+2026-03-19 15:06:07,446 - logger - INFO - 
+2026-03-19 15:06:07,446 - logger - INFO - All tests completed!
+2026-03-19 15:06:23,166 - logger - INFO - Starting address book app
+2026-03-19 15:06:25,985 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 15:06:25,985 - logger - INFO - === TEST: CREATE ===
+2026-03-19 15:06:25,985 - logger - INFO - Method: POST | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 15:06:26,000 - logger - INFO - Status Code: 200
+2026-03-19 15:06:26,000 - logger - INFO - Response: {
+  "id": 9,
+  "latitude": 40.7614,
+  "longitude": -73.9776,
+  "address": {
+    "street": "Times Square",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10036",
+    "landmark": "Times Square"
+  }
+}
+2026-03-19 15:06:26,001 - logger - INFO - === TEST: READ ===
+2026-03-19 15:06:26,001 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 15:06:26,004 - logger - INFO - Retrieved 7 geo locations
+2026-03-19 15:06:26,005 - logger - INFO - Status Code: 200
+2026-03-19 15:06:26,005 - logger - INFO - Response: {
+  "total": 7,
+  "data": [
+    {
+      "id": 3,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malacanan Palace"
+      }
+    },
+    {
+      "id": 4,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    },
+    {
+      "id": 5,
+      "latitude": 14.602,
+      "longitude": 120.985,
+      "address": {
+        "street": "San Miguel Avenue",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "San Miguel Parish Church"
+      }
+    },
+    {
+      "id": 6,
+      "latitude": 14.5975,
+      "longitude": 120.99,
+      "address": {
+        "street": "Quezon Boulevard",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Philippine National Police Headquarters"
+      }
+    },
+    {
+      "id": 7,
+      "latitude": 14.5975,
+      "longitude": 120.99,
+      "address": {
+        "street": "Quezon Boulevard",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Philippine National Police Headquarters"
+      }
+    },
+    {
+      "id": 8,
+      "latitude": 40.7505,
+      "longitude": -73.9934,
+      "address": {
+        "street": "1 Central Park West",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10023",
+        "landmark": "Central Park"
+      }
+    },
+    {
+      "id": 9,
+      "latitude": 40.7614,
+      "longitude": -73.9776,
+      "address": {
+        "street": "Times Square",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10036",
+        "landmark": "Times Square"
+      }
+    }
+  ]
+}
+2026-03-19 15:06:26,006 - logger - INFO - 
+2026-03-19 15:06:26,006 - logger - INFO - All tests completed!
+2026-03-19 15:06:33,681 - logger - INFO - Starting address book app
+2026-03-19 15:06:35,845 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 15:06:35,846 - logger - INFO - === TEST: CREATE ===
+2026-03-19 15:06:35,846 - logger - INFO - Method: POST | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 15:06:35,862 - logger - INFO - Status Code: 200
+2026-03-19 15:06:35,863 - logger - INFO - Response: {
+  "id": 10,
+  "latitude": 40.7489,
+  "longitude": -73.968,
+  "address": {
+    "street": "20 W 34th St",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10001",
+    "landmark": "Madison Square Garden"
+  }
+}
+2026-03-19 15:06:35,863 - logger - INFO - === TEST: READ ===
+2026-03-19 15:06:35,863 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 15:06:35,866 - logger - INFO - Retrieved 8 geo locations
+2026-03-19 15:06:35,867 - logger - INFO - Status Code: 200
+2026-03-19 15:06:35,867 - logger - INFO - Response: {
+  "total": 8,
+  "data": [
+    {
+      "id": 3,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malacanan Palace"
+      }
+    },
+    {
+      "id": 4,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    },
+    {
+      "id": 5,
+      "latitude": 14.602,
+      "longitude": 120.985,
+      "address": {
+        "street": "San Miguel Avenue",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "San Miguel Parish Church"
+      }
+    },
+    {
+      "id": 6,
+      "latitude": 14.5975,
+      "longitude": 120.99,
+      "address": {
+        "street": "Quezon Boulevard",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Philippine National Police Headquarters"
+      }
+    },
+    {
+      "id": 7,
+      "latitude": 14.5975,
+      "longitude": 120.99,
+      "address": {
+        "street": "Quezon Boulevard",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Philippine National Police Headquarters"
+      }
+    },
+    {
+      "id": 8,
+      "latitude": 40.7505,
+      "longitude": -73.9934,
+      "address": {
+        "street": "1 Central Park West",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10023",
+        "landmark": "Central Park"
+      }
+    },
+    {
+      "id": 9,
+      "latitude": 40.7614,
+      "longitude": -73.9776,
+      "address": {
+        "street": "Times Square",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10036",
+        "landmark": "Times Square"
+      }
+    },
+    {
+      "id": 10,
+      "latitude": 40.7489,
+      "longitude": -73.968,
+      "address": {
+        "street": "20 W 34th St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001",
+        "landmark": "Madison Square Garden"
+      }
+    }
+  ]
+}
+2026-03-19 15:06:35,868 - logger - INFO - 
+2026-03-19 15:06:35,868 - logger - INFO - All tests completed!
+2026-03-19 15:07:48,141 - logger - INFO - Starting address book app
+2026-03-19 15:07:50,091 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 15:07:50,092 - logger - INFO - === TEST: CREATE ===
+2026-03-19 15:07:50,092 - logger - INFO - Method: POST | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 15:07:50,111 - logger - INFO - Status Code: 200
+2026-03-19 15:07:50,111 - logger - INFO - Response: {
+  "id": 11,
+  "latitude": 35.6762,
+  "longitude": 139.6503,
+  "address": {
+    "street": "1 Chome-1-1 Marunouchi",
+    "city": "Tokyo",
+    "country": "Japan",
+    "zip": "100-6601",
+    "landmark": "Tokyo Station"
+  }
+}
+2026-03-19 15:07:50,112 - logger - INFO - === TEST: READ ===
+2026-03-19 15:07:50,112 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 15:07:50,115 - logger - INFO - Retrieved 9 geo locations
+2026-03-19 15:07:50,116 - logger - INFO - Status Code: 200
+2026-03-19 15:07:50,116 - logger - INFO - Response: {
+  "total": 9,
+  "data": [
+    {
+      "id": 3,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malacanan Palace"
+      }
+    },
+    {
+      "id": 4,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    },
+    {
+      "id": 5,
+      "latitude": 14.602,
+      "longitude": 120.985,
+      "address": {
+        "street": "San Miguel Avenue",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "San Miguel Parish Church"
+      }
+    },
+    {
+      "id": 6,
+      "latitude": 14.5975,
+      "longitude": 120.99,
+      "address": {
+        "street": "Quezon Boulevard",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Philippine National Police Headquarters"
+      }
+    },
+    {
+      "id": 7,
+      "latitude": 14.5975,
+      "longitude": 120.99,
+      "address": {
+        "street": "Quezon Boulevard",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Philippine National Police Headquarters"
+      }
+    },
+    {
+      "id": 8,
+      "latitude": 40.7505,
+      "longitude": -73.9934,
+      "address": {
+        "street": "1 Central Park West",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10023",
+        "landmark": "Central Park"
+      }
+    },
+    {
+      "id": 9,
+      "latitude": 40.7614,
+      "longitude": -73.9776,
+      "address": {
+        "street": "Times Square",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10036",
+        "landmark": "Times Square"
+      }
+    },
+    {
+      "id": 10,
+      "latitude": 40.7489,
+      "longitude": -73.968,
+      "address": {
+        "street": "20 W 34th St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001",
+        "landmark": "Madison Square Garden"
+      }
+    },
+    {
+      "id": 11,
+      "latitude": 35.6762,
+      "longitude": 139.6503,
+      "address": {
+        "street": "1 Chome-1-1 Marunouchi",
+        "city": "Tokyo",
+        "country": "Japan",
+        "zip": "100-6601",
+        "landmark": "Tokyo Station"
+      }
+    }
+  ]
+}
+2026-03-19 15:07:50,117 - logger - INFO - 
+2026-03-19 15:07:50,117 - logger - INFO - All tests completed!
+2026-03-19 15:08:34,019 - logger - INFO - Starting address book app
+2026-03-19 15:08:45,939 - logger - INFO - Starting address book app
+2026-03-19 15:08:51,928 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 15:08:51,928 - logger - INFO - === TEST: DELETE ===
+2026-03-19 15:08:51,928 - logger - INFO - Method: DELETE | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 15:08:51,932 - logger - INFO - Status Code: 405
+2026-03-19 15:08:51,932 - logger - ERROR - Error Response: {"detail":"Method Not Allowed"}
+2026-03-19 15:08:51,932 - logger - INFO - === TEST: READ ===
+2026-03-19 15:08:51,932 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 15:08:51,938 - logger - INFO - Retrieved 9 geo locations
+2026-03-19 15:08:51,939 - logger - INFO - Status Code: 200
+2026-03-19 15:08:51,939 - logger - INFO - Response: {
+  "total": 9,
+  "data": [
+    {
+      "id": 3,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malacanan Palace"
+      }
+    },
+    {
+      "id": 4,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    },
+    {
+      "id": 5,
+      "latitude": 14.602,
+      "longitude": 120.985,
+      "address": {
+        "street": "San Miguel Avenue",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "San Miguel Parish Church"
+      }
+    },
+    {
+      "id": 6,
+      "latitude": 14.5975,
+      "longitude": 120.99,
+      "address": {
+        "street": "Quezon Boulevard",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Philippine National Police Headquarters"
+      }
+    },
+    {
+      "id": 7,
+      "latitude": 14.5975,
+      "longitude": 120.99,
+      "address": {
+        "street": "Quezon Boulevard",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Philippine National Police Headquarters"
+      }
+    },
+    {
+      "id": 8,
+      "latitude": 40.7505,
+      "longitude": -73.9934,
+      "address": {
+        "street": "1 Central Park West",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10023",
+        "landmark": "Central Park"
+      }
+    },
+    {
+      "id": 9,
+      "latitude": 40.7614,
+      "longitude": -73.9776,
+      "address": {
+        "street": "Times Square",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10036",
+        "landmark": "Times Square"
+      }
+    },
+    {
+      "id": 10,
+      "latitude": 40.7489,
+      "longitude": -73.968,
+      "address": {
+        "street": "20 W 34th St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001",
+        "landmark": "Madison Square Garden"
+      }
+    },
+    {
+      "id": 11,
+      "latitude": 35.6762,
+      "longitude": 139.6503,
+      "address": {
+        "street": "1 Chome-1-1 Marunouchi",
+        "city": "Tokyo",
+        "country": "Japan",
+        "zip": "100-6601",
+        "landmark": "Tokyo Station"
+      }
+    }
+  ]
+}
+2026-03-19 15:08:51,940 - logger - INFO - 
+2026-03-19 15:08:51,940 - logger - INFO - All tests completed!
+2026-03-19 15:09:19,004 - logger - INFO - Starting address book app
+2026-03-19 15:09:20,323 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 15:09:20,323 - logger - INFO - === TEST: DELETE ===
+2026-03-19 15:09:20,323 - logger - INFO - Method: DELETE | URL: http://127.0.0.1:8000/geo-loc/7
+2026-03-19 15:09:20,341 - logger - INFO - Deleted geo location ID: 7
+2026-03-19 15:09:20,342 - logger - INFO - Status Code: 200
+2026-03-19 15:09:20,343 - logger - INFO - Response: {
+  "message": "Geo location with ID 7 deleted successfully"
+}
+2026-03-19 15:09:20,343 - logger - INFO - === TEST: READ ===
+2026-03-19 15:09:20,343 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 15:09:20,346 - logger - INFO - Retrieved 8 geo locations
+2026-03-19 15:09:20,347 - logger - INFO - Status Code: 200
+2026-03-19 15:09:20,347 - logger - INFO - Response: {
+  "total": 8,
+  "data": [
+    {
+      "id": 3,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malacanan Palace"
+      }
+    },
+    {
+      "id": 4,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    },
+    {
+      "id": 5,
+      "latitude": 14.602,
+      "longitude": 120.985,
+      "address": {
+        "street": "San Miguel Avenue",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "San Miguel Parish Church"
+      }
+    },
+    {
+      "id": 6,
+      "latitude": 14.5975,
+      "longitude": 120.99,
+      "address": {
+        "street": "Quezon Boulevard",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Philippine National Police Headquarters"
+      }
+    },
+    {
+      "id": 8,
+      "latitude": 40.7505,
+      "longitude": -73.9934,
+      "address": {
+        "street": "1 Central Park West",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10023",
+        "landmark": "Central Park"
+      }
+    },
+    {
+      "id": 9,
+      "latitude": 40.7614,
+      "longitude": -73.9776,
+      "address": {
+        "street": "Times Square",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10036",
+        "landmark": "Times Square"
+      }
+    },
+    {
+      "id": 10,
+      "latitude": 40.7489,
+      "longitude": -73.968,
+      "address": {
+        "street": "20 W 34th St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001",
+        "landmark": "Madison Square Garden"
+      }
+    },
+    {
+      "id": 11,
+      "latitude": 35.6762,
+      "longitude": 139.6503,
+      "address": {
+        "street": "1 Chome-1-1 Marunouchi",
+        "city": "Tokyo",
+        "country": "Japan",
+        "zip": "100-6601",
+        "landmark": "Tokyo Station"
+      }
+    }
+  ]
+}
+2026-03-19 15:09:20,348 - logger - INFO - 
+2026-03-19 15:09:20,348 - logger - INFO - All tests completed!
+2026-03-19 15:14:59,017 - logger - INFO - Starting address book app
+2026-03-19 15:15:03,457 - logger - INFO - Starting address book app
+2026-03-19 15:15:14,286 - logger - INFO - Starting address book app
+2026-03-19 15:15:27,256 - logger - INFO - Starting address book app
+2026-03-19 15:15:36,001 - logger - INFO - Starting address book app
+2026-03-19 15:18:08,645 - logger - INFO - Starting address book app
+2026-03-19 15:19:46,668 - logger - INFO - Starting address book app
+2026-03-19 15:20:06,840 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 15:20:06,840 - logger - INFO - >>> Test 1: Proximity search near Manila (5 km radius) <<<
+2026-03-19 15:20:06,840 - logger - INFO - === TEST: PROXIMITY SEARCH - Manila Area ===
+2026-03-19 15:20:06,841 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=5.0
+2026-03-19 15:20:06,841 - logger - INFO - Search Center: (14.5994, 120.9842), Radius: 5.0 km
+2026-03-19 15:20:06,844 - logger - INFO - Status Code: 422
+2026-03-19 15:20:06,845 - logger - ERROR - Error Response: {"detail":[{"type":"int_parsing","loc":["path","geo_loc_id"],"msg":"Input should be a valid integer, unable to parse string as an integer","input":"nearby"}]}
+2026-03-19 15:20:06,845 - logger - INFO - 
+2026-03-19 15:20:06,845 - logger - INFO - >>> Test 2: Proximity search near New York (10 km radius) <<<
+2026-03-19 15:20:06,845 - logger - INFO - === TEST: PROXIMITY SEARCH - NYC Area ===
+2026-03-19 15:20:06,845 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=40.7128&longitude=-74.006&distance=10.0
+2026-03-19 15:20:06,845 - logger - INFO - Search Center: (40.7128, -74.006), Radius: 10.0 km
+2026-03-19 15:20:06,848 - logger - INFO - Status Code: 422
+2026-03-19 15:20:06,848 - logger - ERROR - Error Response: {"detail":[{"type":"int_parsing","loc":["path","geo_loc_id"],"msg":"Input should be a valid integer, unable to parse string as an integer","input":"nearby"}]}
+2026-03-19 15:20:06,848 - logger - INFO - 
+2026-03-19 15:20:06,848 - logger - INFO - >>> Test 3: Proximity search with small radius (1 km from Manila) <<<
+2026-03-19 15:20:06,848 - logger - INFO - === TEST: PROXIMITY SEARCH - Very Close ===
+2026-03-19 15:20:06,848 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=1.0
+2026-03-19 15:20:06,848 - logger - INFO - Search Center: (14.5994, 120.9842), Radius: 1.0 km
+2026-03-19 15:20:06,850 - logger - INFO - Status Code: 422
+2026-03-19 15:20:06,850 - logger - ERROR - Error Response: {"detail":[{"type":"int_parsing","loc":["path","geo_loc_id"],"msg":"Input should be a valid integer, unable to parse string as an integer","input":"nearby"}]}
+2026-03-19 15:20:06,850 - logger - INFO - 
+2026-03-19 15:20:06,850 - logger - INFO - >>> Test 4: Invalid distance - too small (0.01 km) <<<
+2026-03-19 15:20:06,850 - logger - INFO - === TEST: PROXIMITY SEARCH - Invalid: Too Small ===
+2026-03-19 15:20:06,850 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=0.01
+2026-03-19 15:20:06,851 - logger - INFO - Search Center: (14.5994, 120.9842), Radius: 0.01 km
+2026-03-19 15:20:06,853 - logger - INFO - Status Code: 422
+2026-03-19 15:20:06,853 - logger - ERROR - Error Response: {"detail":[{"type":"int_parsing","loc":["path","geo_loc_id"],"msg":"Input should be a valid integer, unable to parse string as an integer","input":"nearby"}]}
+2026-03-19 15:20:06,853 - logger - INFO - 
+2026-03-19 15:20:06,853 - logger - INFO - >>> Test 5: Invalid distance - too large (100,000 km) <<<
+2026-03-19 15:20:06,853 - logger - INFO - === TEST: PROXIMITY SEARCH - Invalid: Too Large ===
+2026-03-19 15:20:06,853 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=100000.0
+2026-03-19 15:20:06,853 - logger - INFO - Search Center: (14.5994, 120.9842), Radius: 100000.0 km
+2026-03-19 15:20:06,855 - logger - INFO - Status Code: 422
+2026-03-19 15:20:06,855 - logger - ERROR - Error Response: {"detail":[{"type":"int_parsing","loc":["path","geo_loc_id"],"msg":"Input should be a valid integer, unable to parse string as an integer","input":"nearby"}]}
+2026-03-19 15:20:06,855 - logger - INFO - 
+2026-03-19 15:20:06,855 - logger - INFO - >>> Test 6: Invalid latitude (95 degrees) <<<
+2026-03-19 15:20:06,855 - logger - INFO - === TEST: PROXIMITY SEARCH - Invalid: Bad Latitude ===
+2026-03-19 15:20:06,855 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=95.0&longitude=120.9842&distance=5.0
+2026-03-19 15:20:06,856 - logger - INFO - Search Center: (95.0, 120.9842), Radius: 5.0 km
+2026-03-19 15:20:06,857 - logger - INFO - Status Code: 422
+2026-03-19 15:20:06,857 - logger - ERROR - Error Response: {"detail":[{"type":"int_parsing","loc":["path","geo_loc_id"],"msg":"Input should be a valid integer, unable to parse string as an integer","input":"nearby"}]}
+2026-03-19 15:20:06,857 - logger - INFO - 
+2026-03-19 15:20:06,857 - logger - INFO - === TEST: READ ===
+2026-03-19 15:20:06,857 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/
+2026-03-19 15:20:06,862 - logger - INFO - Retrieved 8 geo locations
+2026-03-19 15:20:06,863 - logger - INFO - Status Code: 200
+2026-03-19 15:20:06,864 - logger - INFO - Response: {
+  "total": 8,
+  "data": [
+    {
+      "id": 3,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malacanan Palace"
+      }
+    },
+    {
+      "id": 4,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      }
+    },
+    {
+      "id": 5,
+      "latitude": 14.602,
+      "longitude": 120.985,
+      "address": {
+        "street": "San Miguel Avenue",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "San Miguel Parish Church"
+      }
+    },
+    {
+      "id": 6,
+      "latitude": 14.5975,
+      "longitude": 120.99,
+      "address": {
+        "street": "Quezon Boulevard",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Philippine National Police Headquarters"
+      }
+    },
+    {
+      "id": 8,
+      "latitude": 40.7505,
+      "longitude": -73.9934,
+      "address": {
+        "street": "1 Central Park West",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10023",
+        "landmark": "Central Park"
+      }
+    },
+    {
+      "id": 9,
+      "latitude": 40.7614,
+      "longitude": -73.9776,
+      "address": {
+        "street": "Times Square",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10036",
+        "landmark": "Times Square"
+      }
+    },
+    {
+      "id": 10,
+      "latitude": 40.7489,
+      "longitude": -73.968,
+      "address": {
+        "street": "20 W 34th St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001",
+        "landmark": "Madison Square Garden"
+      }
+    },
+    {
+      "id": 11,
+      "latitude": 35.6762,
+      "longitude": 139.6503,
+      "address": {
+        "street": "1 Chome-1-1 Marunouchi",
+        "city": "Tokyo",
+        "country": "Japan",
+        "zip": "100-6601",
+        "landmark": "Tokyo Station"
+      }
+    }
+  ]
+}
+2026-03-19 15:20:06,864 - logger - INFO - 
+2026-03-19 15:20:06,864 - logger - INFO - All tests completed!
+2026-03-19 15:23:15,200 - logger - INFO - Starting address book app
+2026-03-19 15:23:21,361 - logger - INFO - Starting address book app
+2026-03-19 15:25:31,680 - logger - INFO - Starting address book app
+2026-03-19 15:27:18,657 - logger - INFO - Starting address book app
+2026-03-19 15:27:20,916 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 15:27:20,916 - logger - INFO - >>> Test 1: Proximity search near Manila (5 km radius) <<<
+2026-03-19 15:27:20,917 - logger - INFO - === TEST: PROXIMITY SEARCH - Manila Area ===
+2026-03-19 15:27:20,917 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=5.0
+2026-03-19 15:27:20,917 - logger - INFO - Search Center: (14.5994, 120.9842), Radius: 5.0 km
+2026-03-19 15:27:20,921 - logger - INFO - Status Code: 422
+2026-03-19 15:27:20,921 - logger - ERROR - Error Response: {"detail":[{"type":"int_parsing","loc":["path","geo_loc_id"],"msg":"Input should be a valid integer, unable to parse string as an integer","input":"nearby"}]}
+2026-03-19 15:27:20,921 - logger - INFO - 
+2026-03-19 15:27:20,921 - logger - INFO - >>> Test 2: Proximity search near New York (10 km radius) <<<
+2026-03-19 15:27:20,921 - logger - INFO - === TEST: PROXIMITY SEARCH - NYC Area ===
+2026-03-19 15:27:20,921 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=40.7128&longitude=-74.006&distance=10.0
+2026-03-19 15:27:20,922 - logger - INFO - Search Center: (40.7128, -74.006), Radius: 10.0 km
+2026-03-19 15:27:20,924 - logger - INFO - Status Code: 422
+2026-03-19 15:27:20,924 - logger - ERROR - Error Response: {"detail":[{"type":"int_parsing","loc":["path","geo_loc_id"],"msg":"Input should be a valid integer, unable to parse string as an integer","input":"nearby"}]}
+2026-03-19 15:27:20,924 - logger - INFO - 
+2026-03-19 15:27:20,924 - logger - INFO - >>> Test 3: Proximity search with small radius (1 km from Manila) <<<
+2026-03-19 15:27:20,924 - logger - INFO - === TEST: PROXIMITY SEARCH - Very Close ===
+2026-03-19 15:27:20,924 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=1.0
+2026-03-19 15:27:20,924 - logger - INFO - Search Center: (14.5994, 120.9842), Radius: 1.0 km
+2026-03-19 15:27:20,926 - logger - INFO - Status Code: 422
+2026-03-19 15:27:20,926 - logger - ERROR - Error Response: {"detail":[{"type":"int_parsing","loc":["path","geo_loc_id"],"msg":"Input should be a valid integer, unable to parse string as an integer","input":"nearby"}]}
+2026-03-19 15:27:20,926 - logger - INFO - 
+2026-03-19 15:27:20,926 - logger - INFO - >>> Test 4: Invalid distance - too small (0.01 km) <<<
+2026-03-19 15:27:20,926 - logger - INFO - === TEST: PROXIMITY SEARCH - Invalid: Too Small ===
+2026-03-19 15:27:20,926 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=0.01
+2026-03-19 15:27:20,926 - logger - INFO - Search Center: (14.5994, 120.9842), Radius: 0.01 km
+2026-03-19 15:27:20,928 - logger - INFO - Status Code: 422
+2026-03-19 15:27:20,928 - logger - ERROR - Error Response: {"detail":[{"type":"int_parsing","loc":["path","geo_loc_id"],"msg":"Input should be a valid integer, unable to parse string as an integer","input":"nearby"}]}
+2026-03-19 15:27:20,928 - logger - INFO - 
+2026-03-19 15:27:20,928 - logger - INFO - >>> Test 5: Invalid distance - too large (100,000 km) <<<
+2026-03-19 15:27:20,928 - logger - INFO - === TEST: PROXIMITY SEARCH - Invalid: Too Large ===
+2026-03-19 15:27:20,929 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=100000.0
+2026-03-19 15:27:20,929 - logger - INFO - Search Center: (14.5994, 120.9842), Radius: 100000.0 km
+2026-03-19 15:27:20,930 - logger - INFO - Status Code: 422
+2026-03-19 15:27:20,930 - logger - ERROR - Error Response: {"detail":[{"type":"int_parsing","loc":["path","geo_loc_id"],"msg":"Input should be a valid integer, unable to parse string as an integer","input":"nearby"}]}
+2026-03-19 15:27:20,930 - logger - INFO - 
+2026-03-19 15:27:20,930 - logger - INFO - >>> Test 6: Invalid latitude (95 degrees) <<<
+2026-03-19 15:27:20,930 - logger - INFO - === TEST: PROXIMITY SEARCH - Invalid: Bad Latitude ===
+2026-03-19 15:27:20,930 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=95.0&longitude=120.9842&distance=5.0
+2026-03-19 15:27:20,930 - logger - INFO - Search Center: (95.0, 120.9842), Radius: 5.0 km
+2026-03-19 15:27:20,932 - logger - INFO - Status Code: 422
+2026-03-19 15:27:20,932 - logger - ERROR - Error Response: {"detail":[{"type":"int_parsing","loc":["path","geo_loc_id"],"msg":"Input should be a valid integer, unable to parse string as an integer","input":"nearby"}]}
+2026-03-19 15:27:20,932 - logger - INFO - 
+2026-03-19 15:27:20,932 - logger - INFO - 
+2026-03-19 15:27:20,932 - logger - INFO - All tests completed!
+2026-03-19 15:28:05,672 - logger - INFO - Starting address book app
+2026-03-19 15:28:21,858 - logger - INFO - Starting address book app
+2026-03-19 15:28:33,281 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 15:28:33,281 - logger - INFO - >>> Test 1: Proximity search near Manila (5 km radius) <<<
+2026-03-19 15:28:33,281 - logger - INFO - === TEST: PROXIMITY SEARCH - Manila Area ===
+2026-03-19 15:28:33,282 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=5.0
+2026-03-19 15:28:33,282 - logger - INFO - Search Center: (14.5994, 120.9842), Radius: 5.0 km
+2026-03-19 15:28:33,289 - logger - INFO - Found 3 locations within 5.0 km from (14.5994, 120.9842)
+2026-03-19 15:28:33,290 - logger - INFO - Status Code: 200
+2026-03-19 15:28:33,290 - logger - INFO - Found 3 locations
+2026-03-19 15:28:33,290 - logger - INFO - Response: {
+  "search_center": {
+    "latitude": 14.5994,
+    "longitude": 120.9842
+  },
+  "search_radius_km": 5.0,
+  "total_found": 3,
+  "data": [
+    {
+      "id": 3,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malacanan Palace"
+      },
+      "distance_km": 0.0
+    },
+    {
+      "id": 5,
+      "latitude": 14.602,
+      "longitude": 120.985,
+      "address": {
+        "street": "San Miguel Avenue",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "San Miguel Parish Church"
+      },
+      "distance_km": 0.3
+    },
+    {
+      "id": 6,
+      "latitude": 14.5975,
+      "longitude": 120.99,
+      "address": {
+        "street": "Quezon Boulevard",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Philippine National Police Headquarters"
+      },
+      "distance_km": 0.66
+    }
+  ]
+}
+2026-03-19 15:28:33,291 - logger - INFO - 
+2026-03-19 15:28:33,291 - logger - INFO - >>> Test 2: Proximity search near New York (10 km radius) <<<
+2026-03-19 15:28:33,291 - logger - INFO - === TEST: PROXIMITY SEARCH - NYC Area ===
+2026-03-19 15:28:33,291 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=40.7128&longitude=-74.006&distance=10.0
+2026-03-19 15:28:33,291 - logger - INFO - Search Center: (40.7128, -74.006), Radius: 10.0 km
+2026-03-19 15:28:33,293 - logger - INFO - Found 4 locations within 10.0 km from (40.7128, -74.006)
+2026-03-19 15:28:33,294 - logger - INFO - Status Code: 200
+2026-03-19 15:28:33,294 - logger - INFO - Found 4 locations
+2026-03-19 15:28:33,294 - logger - INFO - Response: {
+  "search_center": {
+    "latitude": 40.7128,
+    "longitude": -74.006
+  },
+  "search_radius_km": 10.0,
+  "total_found": 4,
+  "data": [
+    {
+      "id": 4,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      },
+      "distance_km": 0.0
+    },
+    {
+      "id": 8,
+      "latitude": 40.7505,
+      "longitude": -73.9934,
+      "address": {
+        "street": "1 Central Park West",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10023",
+        "landmark": "Central Park"
+      },
+      "distance_km": 4.32
+    },
+    {
+      "id": 10,
+      "latitude": 40.7489,
+      "longitude": -73.968,
+      "address": {
+        "street": "20 W 34th St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001",
+        "landmark": "Madison Square Garden"
+      },
+      "distance_km": 5.13
+    },
+    {
+      "id": 9,
+      "latitude": 40.7614,
+      "longitude": -73.9776,
+      "address": {
+        "street": "Times Square",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10036",
+        "landmark": "Times Square"
+      },
+      "distance_km": 5.91
+    }
+  ]
+}
+2026-03-19 15:28:33,295 - logger - INFO - 
+2026-03-19 15:28:33,295 - logger - INFO - >>> Test 3: Proximity search with small radius (1 km from Manila) <<<
+2026-03-19 15:28:33,295 - logger - INFO - === TEST: PROXIMITY SEARCH - Very Close ===
+2026-03-19 15:28:33,295 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=1.0
+2026-03-19 15:28:33,295 - logger - INFO - Search Center: (14.5994, 120.9842), Radius: 1.0 km
+2026-03-19 15:28:33,297 - logger - INFO - Found 3 locations within 1.0 km from (14.5994, 120.9842)
+2026-03-19 15:28:33,298 - logger - INFO - Status Code: 200
+2026-03-19 15:28:33,298 - logger - INFO - Found 3 locations
+2026-03-19 15:28:33,298 - logger - INFO - Response: {
+  "search_center": {
+    "latitude": 14.5994,
+    "longitude": 120.9842
+  },
+  "search_radius_km": 1.0,
+  "total_found": 3,
+  "data": [
+    {
+      "id": 3,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malacanan Palace"
+      },
+      "distance_km": 0.0
+    },
+    {
+      "id": 5,
+      "latitude": 14.602,
+      "longitude": 120.985,
+      "address": {
+        "street": "San Miguel Avenue",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "San Miguel Parish Church"
+      },
+      "distance_km": 0.3
+    },
+    {
+      "id": 6,
+      "latitude": 14.5975,
+      "longitude": 120.99,
+      "address": {
+        "street": "Quezon Boulevard",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Philippine National Police Headquarters"
+      },
+      "distance_km": 0.66
+    }
+  ]
+}
+2026-03-19 15:28:33,299 - logger - INFO - 
+2026-03-19 15:28:33,299 - logger - INFO - >>> Test 4: Invalid distance - too small (0.01 km) <<<
+2026-03-19 15:28:33,299 - logger - INFO - === TEST: PROXIMITY SEARCH - Invalid: Too Small ===
+2026-03-19 15:28:33,299 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=0.01
+2026-03-19 15:28:33,299 - logger - INFO - Search Center: (14.5994, 120.9842), Radius: 0.01 km
+2026-03-19 15:28:33,301 - logger - INFO - Status Code: 400
+2026-03-19 15:28:33,301 - logger - ERROR - Error Response: {"detail":"Distance must be at least 0.1 km"}
+2026-03-19 15:28:33,301 - logger - INFO - 
+2026-03-19 15:28:33,302 - logger - INFO - >>> Test 5: Invalid distance - too large (100,000 km) <<<
+2026-03-19 15:28:33,302 - logger - INFO - === TEST: PROXIMITY SEARCH - Invalid: Too Large ===
+2026-03-19 15:28:33,302 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=100000.0
+2026-03-19 15:28:33,302 - logger - INFO - Search Center: (14.5994, 120.9842), Radius: 100000.0 km
+2026-03-19 15:28:33,304 - logger - INFO - Status Code: 400
+2026-03-19 15:28:33,304 - logger - ERROR - Error Response: {"detail":"Distance cannot exceed 50000 km"}
+2026-03-19 15:28:33,304 - logger - INFO - 
+2026-03-19 15:28:33,304 - logger - INFO - >>> Test 6: Invalid latitude (95 degrees) <<<
+2026-03-19 15:28:33,304 - logger - INFO - === TEST: PROXIMITY SEARCH - Invalid: Bad Latitude ===
+2026-03-19 15:28:33,304 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=95.0&longitude=120.9842&distance=5.0
+2026-03-19 15:28:33,304 - logger - INFO - Search Center: (95.0, 120.9842), Radius: 5.0 km
+2026-03-19 15:28:33,306 - logger - INFO - Status Code: 400
+2026-03-19 15:28:33,306 - logger - ERROR - Error Response: {"detail":"Latitude must be between -90 and 90"}
+2026-03-19 15:28:33,306 - logger - INFO - 
+2026-03-19 15:28:33,306 - logger - INFO - 
+2026-03-19 15:28:33,306 - logger - INFO - All tests completed!
