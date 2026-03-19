@@ -8,22 +8,25 @@ ENDPOINT = "/geo-loc/"
 
 # Test data payloads
 PAYLOAD = {
-    "latitude": 14.5994,
-    "longitude": "",
+    "latitude": 35.6762,
+    "longitude": 139.6503,
     "address": {
-        "street": "J.P. Laurel Street",
-        "city": "Manila",
-        "country": "Philippines",
-        "landmark": "Malacanan Palace"
-    }
+        "street": "1 Chome-1-1 Marunouchi",
+        "city": "Tokyo",
+        "country": "Japan",
+        "zip": "100-6601",
+        "landmark": "Tokyo Station"
+  }
 }
 
 PAYLOAD_UPDATED = {
-    "latitude": 1.0273,
-    "longitude": "1.2084",
+    "latitude": 14.6020,
+    "longitude": 120.9850,
     "address": {
-        "street": "J.P. Laurel Street (Updated)",
-        "city": "Manila"
+      "street": "San Miguel Avenue",
+      "city": "Manila",
+      "country": "Philippines",
+      "landmark": "San Miguel Parish Church"
     }
 }
 
@@ -101,29 +104,72 @@ def test_crud(action, payload=None, resource_id=None):
         logger.error(f"Test failed: {e}")
         return None
 
+def test_proximity_search(latitude: float, longitude: float, distance: float, test_name: str = ""):
+    """
+    Test proximity search endpoint
+    
+    Args:
+        latitude: User's latitude
+        longitude: User's longitude
+        distance: Search radius in km
+        test_name: Description of the test
+    """
+    url = f"{BASE_URL}{ENDPOINT}nearby?latitude={latitude}&longitude={longitude}&distance={distance}"
+    
+    logger.info(f"=== TEST: PROXIMITY SEARCH {test_name} ===")
+    logger.info(f"URL: {url}")
+    logger.info(f"Search Center: ({latitude}, {longitude}), Radius: {distance} km")
+    
+    try:
+        response = requests.get(url)
+        logger.info(f"Status Code: {response.status_code}")
+        
+        if response.status_code == 200:
+            data = response.json()
+            logger.info(f"Found {data['total_found']} locations")
+            logger.info(f"Response: {json.dumps(data, indent=2)}")
+            return data
+        else:
+            logger.error(f"Error Response: {response.text}")
+            return None
+            
+    except Exception as e:
+        logger.error(f"Proximity search test failed: {e}")
+        return None
 
-# Just call test_crud() with the action
-# test_crud(CRUD_CREATE, PAYLOAD_MALACANAN)  # Create
-# test_crud(CRUD_READ)                       # Read all
-# test_crud(CRUD_READ, resource_id=1)        # Read one (future)
-# test_crud(CRUD_UPDATE, PAYLOAD_UPDATED, resource_id=1)  # Update (future)
-# test_crud(CRUD_DELETE, resource_id=1)      # Delete (future)
 # ===== RUN TESTS =====
 if __name__ == "__main__":
     logger.info("Starting CRUD Tests...\n")
-    verified_data = test_crud(CRUD_READ, resource_id=1)
-
-    # Update the created record
-    logger.info(f">>> Step 2: DELETE the record (ID: {verified_data['id']}) <<<")
-    test_crud(CRUD_DELETE, resource_id=1)
-    logger.info("")
-    
-    # Read the updated record to verify changes
-    verified_data = test_crud(CRUD_READ, resource_id=1)
-    logger.info("")
-    
+    # test_crud(CRUD_UPDATE, PAYLOAD_UPDATED, resource_id=3)  # Update (future)
     # Test READ ALL
     # logger.info(">>> Testing READ ALL operation END <<<")
     # all_data = test_crud(CRUD_READ)
+    
+    # ===== PROXIMITY SEARCH TESTS =====
+    logger.info(">>> Test 1: Proximity search near Manila (5 km radius) <<<")
+    test_proximity_search(14.5994, 120.9842, 5.0, "- Manila Area")
     logger.info("")
-    logger.info("✓ All tests completed!")
+    
+    logger.info(">>> Test 2: Proximity search near New York (10 km radius) <<<")
+    test_proximity_search(40.7128, -74.0060, 10.0, "- NYC Area")
+    logger.info("")
+    
+    logger.info(">>> Test 3: Proximity search with small radius (1 km from Manila) <<<")
+    test_proximity_search(14.5994, 120.9842, 1.0, "- Very Close")
+    logger.info("")
+    
+    logger.info(">>> Test 4: Invalid distance - too small (0.01 km) <<<")
+    test_proximity_search(14.5994, 120.9842, 0.01, "- Invalid: Too Small")
+    logger.info("")
+    
+    logger.info(">>> Test 5: Invalid distance - too large (100,000 km) <<<")
+    test_proximity_search(14.5994, 120.9842, 100000.0, "- Invalid: Too Large")
+    logger.info("")
+    
+    logger.info(">>> Test 6: Invalid latitude (95 degrees) <<<")
+    test_proximity_search(95.0, 120.9842, 5.0, "- Invalid: Bad Latitude")
+    logger.info("")
+
+    # test_crud(CRUD_READ)
+    logger.info("")
+    logger.info("All tests completed!")
