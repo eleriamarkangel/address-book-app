@@ -2357,3 +2357,347 @@
 2026-03-19 15:28:33,306 - logger - INFO - 
 2026-03-19 15:28:33,306 - logger - INFO - 
 2026-03-19 15:28:33,306 - logger - INFO - All tests completed!
+2026-03-19 15:51:05,485 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 15:51:05,485 - logger - INFO - >>> Test 1: Proximity search near Manila (5 km radius) <<<
+2026-03-19 15:51:05,485 - logger - INFO - === TEST: PROXIMITY SEARCH - Manila Area ===
+2026-03-19 15:51:05,486 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=5.0
+2026-03-19 15:51:05,486 - logger - INFO - Search Center: (14.5994, 120.9842), Radius: 5.0 km
+2026-03-19 15:51:07,527 - logger - ERROR - Proximity search test failed: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=5.0 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-03-19 15:51:07,528 - logger - INFO - 
+2026-03-19 15:51:07,528 - logger - INFO - >>> Test 2: Proximity search near New York (10 km radius) <<<
+2026-03-19 15:51:07,528 - logger - INFO - === TEST: PROXIMITY SEARCH - NYC Area ===
+2026-03-19 15:51:07,528 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=40.7128&longitude=-74.006&distance=10.0
+2026-03-19 15:51:07,528 - logger - INFO - Search Center: (40.7128, -74.006), Radius: 10.0 km
+2026-03-19 15:51:09,576 - logger - ERROR - Proximity search test failed: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /geo-loc/nearby?latitude=40.7128&longitude=-74.006&distance=10.0 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-03-19 15:51:09,577 - logger - INFO - 
+2026-03-19 15:51:09,577 - logger - INFO - >>> Test 3: Proximity search with small radius (1 km from Manila) <<<
+2026-03-19 15:51:09,577 - logger - INFO - === TEST: PROXIMITY SEARCH - Very Close ===
+2026-03-19 15:51:09,577 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=1.0
+2026-03-19 15:51:09,577 - logger - INFO - Search Center: (14.5994, 120.9842), Radius: 1.0 km
+2026-03-19 15:51:11,622 - logger - ERROR - Proximity search test failed: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=1.0 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-03-19 15:51:11,623 - logger - INFO - 
+2026-03-19 15:51:11,623 - logger - INFO - >>> Test 4: Invalid distance - too small (0.01 km) <<<
+2026-03-19 15:51:11,623 - logger - INFO - === TEST: PROXIMITY SEARCH - Invalid: Too Small ===
+2026-03-19 15:51:11,623 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=0.01
+2026-03-19 15:51:11,623 - logger - INFO - Search Center: (14.5994, 120.9842), Radius: 0.01 km
+2026-03-19 15:51:13,662 - logger - ERROR - Proximity search test failed: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=0.01 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-03-19 15:51:13,662 - logger - INFO - 
+2026-03-19 15:51:13,662 - logger - INFO - >>> Test 5: Invalid distance - too large (100,000 km) <<<
+2026-03-19 15:51:13,663 - logger - INFO - === TEST: PROXIMITY SEARCH - Invalid: Too Large ===
+2026-03-19 15:51:13,663 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=100000.0
+2026-03-19 15:51:13,663 - logger - INFO - Search Center: (14.5994, 120.9842), Radius: 100000.0 km
+2026-03-19 15:51:15,709 - logger - ERROR - Proximity search test failed: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=100000.0 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-03-19 15:51:15,709 - logger - INFO - 
+2026-03-19 15:51:15,709 - logger - INFO - >>> Test 6: Invalid latitude (95 degrees) <<<
+2026-03-19 15:51:15,709 - logger - INFO - === TEST: PROXIMITY SEARCH - Invalid: Bad Latitude ===
+2026-03-19 15:51:15,709 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=95.0&longitude=120.9842&distance=5.0
+2026-03-19 15:51:15,709 - logger - INFO - Search Center: (95.0, 120.9842), Radius: 5.0 km
+2026-03-19 15:51:17,756 - logger - ERROR - Proximity search test failed: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /geo-loc/nearby?latitude=95.0&longitude=120.9842&distance=5.0 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-03-19 15:51:17,756 - logger - INFO - 
+2026-03-19 15:51:17,756 - logger - INFO - 
+2026-03-19 15:51:17,757 - logger - INFO - All tests completed!
+2026-03-19 15:55:53,446 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 15:55:53,446 - logger - INFO - >>> Test 1: Proximity search near Manila (5 km radius) <<<
+2026-03-19 15:55:53,447 - logger - INFO - === TEST: PROXIMITY SEARCH - Manila Area ===
+2026-03-19 15:55:53,447 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=5.0
+2026-03-19 15:55:53,447 - logger - INFO - Search Center: (14.5994, 120.9842), Radius: 5.0 km
+2026-03-19 15:55:55,463 - logger - ERROR - Proximity search test failed: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=5.0 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-03-19 15:55:55,464 - logger - INFO - 
+2026-03-19 15:55:55,464 - logger - INFO - >>> Test 2: Proximity search near New York (10 km radius) <<<
+2026-03-19 15:55:55,464 - logger - INFO - === TEST: PROXIMITY SEARCH - NYC Area ===
+2026-03-19 15:55:55,464 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=40.7128&longitude=-74.006&distance=10.0
+2026-03-19 15:55:55,464 - logger - INFO - Search Center: (40.7128, -74.006), Radius: 10.0 km
+2026-03-19 15:55:57,510 - logger - ERROR - Proximity search test failed: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /geo-loc/nearby?latitude=40.7128&longitude=-74.006&distance=10.0 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-03-19 15:55:57,510 - logger - INFO - 
+2026-03-19 15:55:57,510 - logger - INFO - >>> Test 3: Proximity search with small radius (1 km from Manila) <<<
+2026-03-19 15:55:57,510 - logger - INFO - === TEST: PROXIMITY SEARCH - Very Close ===
+2026-03-19 15:55:57,511 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=1.0
+2026-03-19 15:55:57,511 - logger - INFO - Search Center: (14.5994, 120.9842), Radius: 1.0 km
+2026-03-19 15:55:59,561 - logger - ERROR - Proximity search test failed: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=1.0 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-03-19 15:55:59,561 - logger - INFO - 
+2026-03-19 15:55:59,561 - logger - INFO - >>> Test 4: Invalid distance - too small (0.01 km) <<<
+2026-03-19 15:55:59,562 - logger - INFO - === TEST: PROXIMITY SEARCH - Invalid: Too Small ===
+2026-03-19 15:55:59,562 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=0.01
+2026-03-19 15:55:59,562 - logger - INFO - Search Center: (14.5994, 120.9842), Radius: 0.01 km
+2026-03-19 15:56:01,612 - logger - ERROR - Proximity search test failed: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=0.01 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-03-19 15:56:01,612 - logger - INFO - 
+2026-03-19 15:56:01,613 - logger - INFO - >>> Test 5: Invalid distance - too large (100,000 km) <<<
+2026-03-19 15:56:01,613 - logger - INFO - === TEST: PROXIMITY SEARCH - Invalid: Too Large ===
+2026-03-19 15:56:01,613 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=100000.0
+2026-03-19 15:56:01,613 - logger - INFO - Search Center: (14.5994, 120.9842), Radius: 100000.0 km
+2026-03-19 15:56:03,648 - logger - ERROR - Proximity search test failed: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=100000.0 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-03-19 15:56:03,649 - logger - INFO - 
+2026-03-19 15:56:03,649 - logger - INFO - >>> Test 6: Invalid latitude (95 degrees) <<<
+2026-03-19 15:56:03,649 - logger - INFO - === TEST: PROXIMITY SEARCH - Invalid: Bad Latitude ===
+2026-03-19 15:56:03,649 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=95.0&longitude=120.9842&distance=5.0
+2026-03-19 15:56:03,649 - logger - INFO - Search Center: (95.0, 120.9842), Radius: 5.0 km
+2026-03-19 15:56:05,695 - logger - ERROR - Proximity search test failed: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /geo-loc/nearby?latitude=95.0&longitude=120.9842&distance=5.0 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-03-19 15:56:05,696 - logger - INFO - 
+2026-03-19 15:56:05,696 - logger - INFO - 
+2026-03-19 15:56:05,696 - logger - INFO - All tests completed!
+2026-03-19 15:59:43,734 - logger - INFO - Starting address book app
+2026-03-19 16:00:56,309 - logger - INFO - Starting address book app
+2026-03-19 16:01:42,089 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 16:01:42,090 - logger - INFO - >>> Test 1: Proximity search near Manila (5 km radius) <<<
+2026-03-19 16:01:42,090 - logger - INFO - === TEST: PROXIMITY SEARCH - Manila Area ===
+2026-03-19 16:01:42,090 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=5.0
+2026-03-19 16:01:42,090 - logger - INFO - Search Center: (14.5994, 120.9842), Radius: 5.0 km
+2026-03-19 16:01:44,134 - logger - ERROR - Proximity search test failed: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=5.0 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-03-19 16:01:44,134 - logger - INFO - 
+2026-03-19 16:01:44,135 - logger - INFO - >>> Test 2: Proximity search near New York (10 km radius) <<<
+2026-03-19 16:01:44,135 - logger - INFO - === TEST: PROXIMITY SEARCH - NYC Area ===
+2026-03-19 16:01:44,135 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=40.7128&longitude=-74.006&distance=10.0
+2026-03-19 16:01:44,135 - logger - INFO - Search Center: (40.7128, -74.006), Radius: 10.0 km
+2026-03-19 16:01:46,178 - logger - ERROR - Proximity search test failed: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /geo-loc/nearby?latitude=40.7128&longitude=-74.006&distance=10.0 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-03-19 16:01:46,179 - logger - INFO - 
+2026-03-19 16:01:46,179 - logger - INFO - >>> Test 3: Proximity search with small radius (1 km from Manila) <<<
+2026-03-19 16:01:46,179 - logger - INFO - === TEST: PROXIMITY SEARCH - Very Close ===
+2026-03-19 16:01:46,179 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=1.0
+2026-03-19 16:01:46,180 - logger - INFO - Search Center: (14.5994, 120.9842), Radius: 1.0 km
+2026-03-19 16:01:48,216 - logger - ERROR - Proximity search test failed: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=1.0 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-03-19 16:01:48,217 - logger - INFO - 
+2026-03-19 16:01:48,217 - logger - INFO - >>> Test 4: Invalid distance - too small (0.01 km) <<<
+2026-03-19 16:01:48,217 - logger - INFO - === TEST: PROXIMITY SEARCH - Invalid: Too Small ===
+2026-03-19 16:01:48,217 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=0.01
+2026-03-19 16:01:48,218 - logger - INFO - Search Center: (14.5994, 120.9842), Radius: 0.01 km
+2026-03-19 16:01:50,267 - logger - ERROR - Proximity search test failed: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=0.01 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-03-19 16:01:50,268 - logger - INFO - 
+2026-03-19 16:01:50,268 - logger - INFO - >>> Test 5: Invalid distance - too large (100,000 km) <<<
+2026-03-19 16:01:50,268 - logger - INFO - === TEST: PROXIMITY SEARCH - Invalid: Too Large ===
+2026-03-19 16:01:50,268 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=100000.0
+2026-03-19 16:01:50,269 - logger - INFO - Search Center: (14.5994, 120.9842), Radius: 100000.0 km
+2026-03-19 16:01:52,308 - logger - ERROR - Proximity search test failed: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=100000.0 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-03-19 16:01:52,309 - logger - INFO - 
+2026-03-19 16:01:52,309 - logger - INFO - >>> Test 6: Invalid latitude (95 degrees) <<<
+2026-03-19 16:01:52,309 - logger - INFO - === TEST: PROXIMITY SEARCH - Invalid: Bad Latitude ===
+2026-03-19 16:01:52,309 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=95.0&longitude=120.9842&distance=5.0
+2026-03-19 16:01:52,309 - logger - INFO - Search Center: (95.0, 120.9842), Radius: 5.0 km
+2026-03-19 16:01:54,358 - logger - ERROR - Proximity search test failed: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /geo-loc/nearby?latitude=95.0&longitude=120.9842&distance=5.0 (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-03-19 16:01:54,359 - logger - INFO - 
+2026-03-19 16:01:54,359 - logger - INFO - 
+2026-03-19 16:01:54,359 - logger - INFO - All tests completed!
+2026-03-19 16:03:43,727 - logger - INFO - Starting address book app
+2026-03-19 16:04:30,393 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 16:04:30,393 - logger - INFO - >>> Test 1: Proximity search near Manila (5 km radius) <<<
+2026-03-19 16:04:30,393 - logger - INFO - === TEST: PROXIMITY SEARCH - Manila Area ===
+2026-03-19 16:04:30,393 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=5.0
+2026-03-19 16:04:30,393 - logger - INFO - Search Center: (14.5994, 120.9842), Radius: 5.0 km
+2026-03-19 16:04:30,401 - logger - INFO - Found 3 locations within 5.0 km from (14.5994, 120.9842)
+2026-03-19 16:04:30,403 - logger - INFO - Status Code: 200
+2026-03-19 16:04:30,403 - logger - INFO - Found 3 locations
+2026-03-19 16:04:30,403 - logger - INFO - Response: {
+  "search_center": {
+    "latitude": 14.5994,
+    "longitude": 120.9842
+  },
+  "search_radius_km": 5.0,
+  "total_found": 3,
+  "data": [
+    {
+      "id": 3,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malacanan Palace"
+      },
+      "distance_km": 0.0
+    },
+    {
+      "id": 5,
+      "latitude": 14.602,
+      "longitude": 120.985,
+      "address": {
+        "street": "San Miguel Avenue",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "San Miguel Parish Church"
+      },
+      "distance_km": 0.3
+    },
+    {
+      "id": 6,
+      "latitude": 14.5975,
+      "longitude": 120.99,
+      "address": {
+        "street": "Quezon Boulevard",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Philippine National Police Headquarters"
+      },
+      "distance_km": 0.66
+    }
+  ]
+}
+2026-03-19 16:04:30,403 - logger - INFO - 
+2026-03-19 16:04:30,403 - logger - INFO - >>> Test 2: Proximity search near New York (10 km radius) <<<
+2026-03-19 16:04:30,403 - logger - INFO - === TEST: PROXIMITY SEARCH - NYC Area ===
+2026-03-19 16:04:30,404 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=40.7128&longitude=-74.006&distance=10.0
+2026-03-19 16:04:30,404 - logger - INFO - Search Center: (40.7128, -74.006), Radius: 10.0 km
+2026-03-19 16:04:30,406 - logger - INFO - Found 4 locations within 10.0 km from (40.7128, -74.006)
+2026-03-19 16:04:30,407 - logger - INFO - Status Code: 200
+2026-03-19 16:04:30,407 - logger - INFO - Found 4 locations
+2026-03-19 16:04:30,407 - logger - INFO - Response: {
+  "search_center": {
+    "latitude": 40.7128,
+    "longitude": -74.006
+  },
+  "search_radius_km": 10.0,
+  "total_found": 4,
+  "data": [
+    {
+      "id": 4,
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001"
+      },
+      "distance_km": 0.0
+    },
+    {
+      "id": 8,
+      "latitude": 40.7505,
+      "longitude": -73.9934,
+      "address": {
+        "street": "1 Central Park West",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10023",
+        "landmark": "Central Park"
+      },
+      "distance_km": 4.32
+    },
+    {
+      "id": 10,
+      "latitude": 40.7489,
+      "longitude": -73.968,
+      "address": {
+        "street": "20 W 34th St",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001",
+        "landmark": "Madison Square Garden"
+      },
+      "distance_km": 5.13
+    },
+    {
+      "id": 9,
+      "latitude": 40.7614,
+      "longitude": -73.9776,
+      "address": {
+        "street": "Times Square",
+        "city": "New York",
+        "state": "NY",
+        "zip": "10036",
+        "landmark": "Times Square"
+      },
+      "distance_km": 5.91
+    }
+  ]
+}
+2026-03-19 16:04:30,408 - logger - INFO - 
+2026-03-19 16:04:30,408 - logger - INFO - >>> Test 3: Proximity search with small radius (1 km from Manila) <<<
+2026-03-19 16:04:30,408 - logger - INFO - === TEST: PROXIMITY SEARCH - Very Close ===
+2026-03-19 16:04:30,408 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=1.0
+2026-03-19 16:04:30,408 - logger - INFO - Search Center: (14.5994, 120.9842), Radius: 1.0 km
+2026-03-19 16:04:30,410 - logger - INFO - Found 3 locations within 1.0 km from (14.5994, 120.9842)
+2026-03-19 16:04:30,411 - logger - INFO - Status Code: 200
+2026-03-19 16:04:30,411 - logger - INFO - Found 3 locations
+2026-03-19 16:04:30,411 - logger - INFO - Response: {
+  "search_center": {
+    "latitude": 14.5994,
+    "longitude": 120.9842
+  },
+  "search_radius_km": 1.0,
+  "total_found": 3,
+  "data": [
+    {
+      "id": 3,
+      "latitude": 14.5994,
+      "longitude": 120.9842,
+      "address": {
+        "street": "J.P. Laurel Street",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Malacanan Palace"
+      },
+      "distance_km": 0.0
+    },
+    {
+      "id": 5,
+      "latitude": 14.602,
+      "longitude": 120.985,
+      "address": {
+        "street": "San Miguel Avenue",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "San Miguel Parish Church"
+      },
+      "distance_km": 0.3
+    },
+    {
+      "id": 6,
+      "latitude": 14.5975,
+      "longitude": 120.99,
+      "address": {
+        "street": "Quezon Boulevard",
+        "city": "Manila",
+        "country": "Philippines",
+        "landmark": "Philippine National Police Headquarters"
+      },
+      "distance_km": 0.66
+    }
+  ]
+}
+2026-03-19 16:04:30,411 - logger - INFO - 
+2026-03-19 16:04:30,411 - logger - INFO - >>> Test 4: Invalid distance - too small (0.01 km) <<<
+2026-03-19 16:04:30,411 - logger - INFO - === TEST: PROXIMITY SEARCH - Invalid: Too Small ===
+2026-03-19 16:04:30,412 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=0.01
+2026-03-19 16:04:30,412 - logger - INFO - Search Center: (14.5994, 120.9842), Radius: 0.01 km
+2026-03-19 16:04:30,414 - logger - INFO - Status Code: 400
+2026-03-19 16:04:30,414 - logger - ERROR - Error Response: {"detail":"Distance must be at least 0.1 km"}
+2026-03-19 16:04:30,414 - logger - INFO - 
+2026-03-19 16:04:30,414 - logger - INFO - >>> Test 5: Invalid distance - too large (100,000 km) <<<
+2026-03-19 16:04:30,414 - logger - INFO - === TEST: PROXIMITY SEARCH - Invalid: Too Large ===
+2026-03-19 16:04:30,414 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=14.5994&longitude=120.9842&distance=100000.0
+2026-03-19 16:04:30,414 - logger - INFO - Search Center: (14.5994, 120.9842), Radius: 100000.0 km
+2026-03-19 16:04:30,416 - logger - INFO - Status Code: 400
+2026-03-19 16:04:30,416 - logger - ERROR - Error Response: {"detail":"Distance cannot exceed 50000 km"}
+2026-03-19 16:04:30,416 - logger - INFO - 
+2026-03-19 16:04:30,416 - logger - INFO - >>> Test 6: Invalid latitude (95 degrees) <<<
+2026-03-19 16:04:30,416 - logger - INFO - === TEST: PROXIMITY SEARCH - Invalid: Bad Latitude ===
+2026-03-19 16:04:30,417 - logger - INFO - URL: http://127.0.0.1:8000/geo-loc/nearby?latitude=95.0&longitude=120.9842&distance=5.0
+2026-03-19 16:04:30,417 - logger - INFO - Search Center: (95.0, 120.9842), Radius: 5.0 km
+2026-03-19 16:04:30,418 - logger - INFO - Status Code: 400
+2026-03-19 16:04:30,418 - logger - ERROR - Error Response: {"detail":"Latitude must be between -90 and 90"}
+2026-03-19 16:04:30,418 - logger - INFO - 
+2026-03-19 16:04:30,418 - logger - INFO - 
+2026-03-19 16:04:30,418 - logger - INFO - All tests completed!
+2026-03-19 16:07:45,959 - logger - INFO - Found 0 locations within 1.0 km from (14.0, 100.0)
+2026-03-19 16:08:30,584 - logger - INFO - Found 0 locations within 1.0 km from (14.5, 120.9)
+2026-03-19 16:08:31,207 - logger - INFO - Found 0 locations within 1.0 km from (14.5, 120.9)
+2026-03-19 16:08:31,614 - logger - INFO - Found 0 locations within 1.0 km from (14.5, 120.9)
+2026-03-19 16:09:24,336 - logger - INFO - Retrieved geo location ID: 6
+2026-03-19 16:10:28,495 - logger - INFO - Found 0 locations within 10.0 km from (40.7128, 74.006)
+2026-03-19 16:10:30,022 - logger - INFO - Found 0 locations within 10.0 km from (40.7128, 74.006)
+2026-03-19 16:11:24,994 - logger - INFO - Found 4 locations within 10.0 km from (40.7128, -74.006)
+2026-03-19 16:11:43,565 - logger - INFO - Found 0 locations within 5.0 km from (14.0, 120.0)
+2026-03-19 16:13:42,696 - logger - INFO - Found 0 locations within 5.0 km from (14.5, 120.9)
+2026-03-19 16:13:58,696 - logger - INFO - Found 3 locations within 5.0 km from (14.59, 120.98)
+2026-03-19 16:14:40,856 - logger - INFO - Retrieved 8 geo locations
+2026-03-19 16:14:58,977 - logger - INFO - Deleted geo location ID: 11
+2026-03-19 16:15:06,164 - logger - INFO - Retrieved 7 geo locations
+2026-03-19 16:16:51,437 - logger - INFO - Updated geo location ID: 10
+2026-03-19 16:17:03,717 - logger - INFO - Retrieved 7 geo locations
+2026-03-19 16:17:16,791 - logger - INFO - Updated geo location ID: 10
+2026-03-19 16:17:30,519 - logger - INFO - Retrieved 7 geo locations
+2026-03-19 16:20:14,154 - logger - INFO - Retrieved 8 geo locations
