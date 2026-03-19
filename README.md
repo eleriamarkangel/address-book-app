@@ -66,6 +66,21 @@ python main.py
 - `PUT /geo-loc/{id}` - Update an address
 - `DELETE /geo-loc/{id}` - Delete an address
 
+### Available Endpoints
+```python
+# Test data payloads
+PAYLOAD = {
+    "latitude": 35.6762,
+    "longitude": 139.6503,
+    "address": {
+        "street": "1 Chome-1-1 Marunouchi",
+        "city": "Tokyo",
+        "country": "Japan",
+        "zip": "100-6601",
+        "landmark": "Tokyo Station"
+    }
+}
+
 ### Interactive API Documentation
 
 Once the server is running, visit:
@@ -110,7 +125,7 @@ address-book-app/
 └── README.md            # This file
 ```
 
-## Notes
+## Important Notes
 
 - The database file `geo_address.db` is created automatically on first run
 - All locations are stored with latitude/longitude coordinates
