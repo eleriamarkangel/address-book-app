@@ -22,6 +22,3 @@ logging.basicConfig(
 
 # Get logger instance
 logger = logging.getLogger(__name__)
-
-# Log that logger is initialized
-logger.info(f"Logger initialized. Log file: {log_file}")
