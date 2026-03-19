@@ -87,7 +87,7 @@ Once the server is running, visit:
 - Swagger UI: `http://127.0.0.1:8000/docs`
 - ReDoc: `http://127.0.0.1:8000/redoc`
 
-## Running Tests
+### Running Tests
 
 1. **Start the API server** (in one terminal):
    ```bash
