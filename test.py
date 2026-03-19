@@ -1,10 +1,7 @@
 import requests
 import json
 from logger import logger
-
-# ===== GLOBAL VARIABLES =====
-BASE_URL = "http://127.0.0.1:8000"
-ENDPOINT = "/geo-loc/"
+from model.constants import BASE_URL, ENDPOINT
 
 # Test data payloads
 PAYLOAD = {
@@ -16,7 +13,7 @@ PAYLOAD = {
         "country": "Japan",
         "zip": "100-6601",
         "landmark": "Tokyo Station"
-  }
+      }
 }
 
 PAYLOAD_UPDATED = {
@@ -137,13 +134,15 @@ def test_proximity_search(latitude: float, longitude: float, distance: float, te
         logger.error(f"Proximity search test failed: {e}")
         return None
 
+# Just call test_crud() with the action
+# test_crud(CRUD_CREATE, PAYLOAD)  # Create
+# test_crud(CRUD_READ)                       # Read all
+# test_crud(CRUD_READ, resource_id=1)        # Read one (future)
+# test_crud(CRUD_UPDATE, PAYLOAD_UPDATED, resource_id=1)  # Update (future)
+# test_crud(CRUD_DELETE, resource_id=1)      # Delete (future)
 # ===== RUN TESTS =====
 if __name__ == "__main__":
     logger.info("Starting CRUD Tests...\n")
-    # test_crud(CRUD_UPDATE, PAYLOAD_UPDATED, resource_id=3)  # Update (future)
-    # Test READ ALL
-    # logger.info(">>> Testing READ ALL operation END <<<")
-    # all_data = test_crud(CRUD_READ)
     
     # ===== PROXIMITY SEARCH TESTS =====
     logger.info(">>> Test 1: Proximity search near Manila (5 km radius) <<<")
@@ -170,6 +169,7 @@ if __name__ == "__main__":
     test_proximity_search(95.0, 120.9842, 5.0, "- Invalid: Bad Latitude")
     logger.info("")
 
-    # test_crud(CRUD_READ)
+    test_crud(CRUD_CREATE, PAYLOAD)
+    test_crud(CRUD_READ)
     logger.info("")
     logger.info("All tests completed!")
