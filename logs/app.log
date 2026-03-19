@@ -536,3 +536,331 @@
 2026-03-19 13:45:46,825 - logger - INFO - 
 2026-03-19 13:47:10,017 - logger - INFO - Starting address book app
 2026-03-19 13:47:46,893 - logger - INFO - Starting address book app
+2026-03-19 13:52:35,858 - logger - INFO - Starting address book app
+2026-03-19 13:52:39,963 - logger - INFO - Starting address book app
+2026-03-19 13:52:49,399 - logger - INFO - Starting address book app
+2026-03-19 13:53:05,180 - logger - INFO - Starting address book app
+2026-03-19 13:53:13,481 - logger - INFO - Starting address book app
+2026-03-19 13:55:51,415 - logger - INFO - Starting address book app
+2026-03-19 13:58:21,726 - logger - INFO - Starting address book app
+2026-03-19 13:58:28,638 - logger - INFO - Starting address book app
+2026-03-19 14:02:35,468 - logger - INFO - Starting address book app
+2026-03-19 14:03:30,819 - logger - INFO - Starting address book app
+2026-03-19 14:12:15,409 - logger - INFO - Starting address book app
+2026-03-19 14:12:29,261 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 14:12:29,261 - logger - INFO - === TEST: READ ===
+2026-03-19 14:12:29,261 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:12:29,268 - logger - INFO - Retrieved geo location ID: 1
+2026-03-19 14:12:29,270 - logger - INFO - Status Code: 200
+2026-03-19 14:12:29,270 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 40.7128,
+  "longitude": -74.006,
+  "address": {
+    "street": "123 Main St",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10001"
+  }
+}
+2026-03-19 14:12:29,270 - logger - INFO - >>> Step 2: UPDATE the record (ID: ) <<<
+2026-03-19 14:12:29,270 - logger - INFO - === TEST: UPDATE ===
+2026-03-19 14:12:29,270 - logger - INFO - Method: PUT | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:12:29,280 - logger - INFO - Updated geo location ID: 1
+2026-03-19 14:12:29,281 - logger - INFO - Status Code: 200
+2026-03-19 14:12:29,282 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 14.596,
+  "longitude": 120.987,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila",
+    "country": "Philippines",
+    "landmark": "Malacanyang Palace - Main Gate"
+  }
+}
+2026-03-19 14:12:29,282 - logger - INFO - 
+2026-03-19 14:12:29,282 - logger - INFO - >>> Step 3: READ the updated record (ID:) - Verify changes <<<
+2026-03-19 14:12:29,282 - logger - INFO - === TEST: READ ===
+2026-03-19 14:12:29,282 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:12:29,285 - logger - INFO - Retrieved geo location ID: 1
+2026-03-19 14:12:29,286 - logger - INFO - Status Code: 200
+2026-03-19 14:12:29,286 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 14.596,
+  "longitude": 120.987,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila",
+    "country": "Philippines",
+    "landmark": "Malacanyang Palace - Main Gate"
+  }
+}
+2026-03-19 14:12:29,286 - logger - INFO - 
+2026-03-19 14:12:29,286 - logger - INFO - 
+2026-03-19 14:13:27,134 - logger - INFO - Starting address book app
+2026-03-19 14:13:36,436 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 14:13:36,437 - logger - INFO - === TEST: READ ===
+2026-03-19 14:13:36,437 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:13:36,443 - logger - INFO - Retrieved geo location ID: 1
+2026-03-19 14:13:36,444 - logger - INFO - Status Code: 200
+2026-03-19 14:13:36,445 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 14.596,
+  "longitude": 120.987,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila",
+    "country": "Philippines",
+    "landmark": "Malacanyang Palace - Main Gate"
+  }
+}
+2026-03-19 14:13:36,445 - logger - INFO - >>> Step 2: UPDATE the record (ID: ) <<<
+2026-03-19 14:13:36,445 - logger - INFO - === TEST: UPDATE ===
+2026-03-19 14:13:36,445 - logger - INFO - Method: PUT | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:13:36,448 - logger - INFO - Status Code: 400
+2026-03-19 14:13:36,448 - logger - ERROR - Error Response: {"detail":"Missing required fields: latitude, longitude, address"}
+2026-03-19 14:13:36,448 - logger - INFO - 
+2026-03-19 14:13:36,448 - logger - INFO - >>> Step 3: READ the updated record (ID:) - Verify changes <<<
+2026-03-19 14:13:36,448 - logger - INFO - === TEST: READ ===
+2026-03-19 14:13:36,448 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:13:36,450 - logger - INFO - Retrieved geo location ID: 1
+2026-03-19 14:13:36,451 - logger - INFO - Status Code: 200
+2026-03-19 14:13:36,451 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 14.596,
+  "longitude": 120.987,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila",
+    "country": "Philippines",
+    "landmark": "Malacanyang Palace - Main Gate"
+  }
+}
+2026-03-19 14:13:36,452 - logger - INFO - 
+2026-03-19 14:13:36,452 - logger - INFO - 
+2026-03-19 14:15:05,632 - logger - INFO - Starting address book app
+2026-03-19 14:15:38,059 - logger - INFO - Starting address book app
+2026-03-19 14:15:39,384 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 14:15:39,384 - logger - INFO - === TEST: READ ===
+2026-03-19 14:15:39,384 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:15:39,390 - logger - INFO - Retrieved geo location ID: 1
+2026-03-19 14:15:39,391 - logger - INFO - Status Code: 200
+2026-03-19 14:15:39,391 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 14.596,
+  "longitude": 120.987,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila",
+    "country": "Philippines",
+    "landmark": "Malacanyang Palace - Main Gate"
+  }
+}
+2026-03-19 14:15:39,392 - logger - INFO - >>> Step 2: UPDATE the record (ID: ) <<<
+2026-03-19 14:15:39,392 - logger - INFO - === TEST: UPDATE ===
+2026-03-19 14:15:39,392 - logger - INFO - Method: PUT | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:15:39,394 - logger - INFO - Status Code: 400
+2026-03-19 14:15:39,394 - logger - ERROR - Error Response: {"detail":"Missing required fields to update: latitude, longitude, address"}
+2026-03-19 14:15:39,395 - logger - INFO - 
+2026-03-19 14:15:39,395 - logger - INFO - >>> Step 3: READ the updated record (ID:) - Verify changes <<<
+2026-03-19 14:15:39,395 - logger - INFO - === TEST: READ ===
+2026-03-19 14:15:39,395 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:15:39,397 - logger - INFO - Retrieved geo location ID: 1
+2026-03-19 14:15:39,398 - logger - INFO - Status Code: 200
+2026-03-19 14:15:39,398 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 14.596,
+  "longitude": 120.987,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila",
+    "country": "Philippines",
+    "landmark": "Malacanyang Palace - Main Gate"
+  }
+}
+2026-03-19 14:15:39,398 - logger - INFO - 
+2026-03-19 14:15:39,398 - logger - INFO - 
+2026-03-19 14:16:48,445 - logger - INFO - Starting address book app
+2026-03-19 14:16:49,920 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 14:16:49,921 - logger - INFO - === TEST: READ ===
+2026-03-19 14:16:49,921 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:16:49,928 - logger - INFO - Retrieved geo location ID: 1
+2026-03-19 14:16:49,929 - logger - INFO - Status Code: 200
+2026-03-19 14:16:49,929 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 14.596,
+  "longitude": 120.987,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila",
+    "country": "Philippines",
+    "landmark": "Malacanyang Palace - Main Gate"
+  }
+}
+2026-03-19 14:16:49,930 - logger - INFO - >>> Step 2: UPDATE the record (ID: ) <<<
+2026-03-19 14:16:49,930 - logger - INFO - === TEST: UPDATE ===
+2026-03-19 14:16:49,930 - logger - INFO - Method: PUT | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:16:49,938 - logger - INFO - Updated geo location ID: 1
+2026-03-19 14:16:49,940 - logger - INFO - Status Code: 200
+2026-03-19 14:16:49,940 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 1.0273,
+  "longitude": 120.987,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila"
+  }
+}
+2026-03-19 14:16:49,940 - logger - INFO - 
+2026-03-19 14:16:49,940 - logger - INFO - >>> Step 3: READ the updated record (ID:) - Verify changes <<<
+2026-03-19 14:16:49,940 - logger - INFO - === TEST: READ ===
+2026-03-19 14:16:49,940 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:16:49,943 - logger - INFO - Retrieved geo location ID: 1
+2026-03-19 14:16:49,944 - logger - INFO - Status Code: 200
+2026-03-19 14:16:49,944 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 1.0273,
+  "longitude": 120.987,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila"
+  }
+}
+2026-03-19 14:16:49,944 - logger - INFO - 
+2026-03-19 14:16:49,944 - logger - INFO - 
+2026-03-19 14:18:28,927 - logger - INFO - Starting address book app
+2026-03-19 14:18:31,176 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 14:18:31,176 - logger - INFO - === TEST: READ ===
+2026-03-19 14:18:31,176 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:18:31,183 - logger - INFO - Retrieved geo location ID: 1
+2026-03-19 14:18:31,184 - logger - INFO - Status Code: 200
+2026-03-19 14:18:31,184 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 1.0273,
+  "longitude": 120.987,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila"
+  }
+}
+2026-03-19 14:18:31,184 - logger - INFO - >>> Step 2: UPDATE the record (ID: ) <<<
+2026-03-19 14:18:31,185 - logger - INFO - === TEST: UPDATE ===
+2026-03-19 14:18:31,185 - logger - INFO - Method: PUT | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:18:31,198 - logger - INFO - Updated geo location ID: 1
+2026-03-19 14:18:31,199 - logger - INFO - Status Code: 200
+2026-03-19 14:18:31,199 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 1.0273,
+  "longitude": 1.2084,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila"
+  }
+}
+2026-03-19 14:18:31,200 - logger - INFO - 
+2026-03-19 14:18:31,200 - logger - INFO - >>> Step 3: READ the updated record (ID:) - Verify changes <<<
+2026-03-19 14:18:31,200 - logger - INFO - === TEST: READ ===
+2026-03-19 14:18:31,200 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:18:31,202 - logger - INFO - Retrieved geo location ID: 1
+2026-03-19 14:18:31,203 - logger - INFO - Status Code: 200
+2026-03-19 14:18:31,203 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 1.0273,
+  "longitude": 1.2084,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila"
+  }
+}
+2026-03-19 14:18:31,204 - logger - INFO - 
+2026-03-19 14:18:31,204 - logger - INFO - 
+2026-03-19 14:19:32,110 - logger - INFO - Starting address book app
+2026-03-19 14:19:33,336 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 14:19:33,336 - logger - INFO - === TEST: READ ===
+2026-03-19 14:19:33,336 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:19:33,342 - logger - INFO - Retrieved geo location ID: 1
+2026-03-19 14:19:33,344 - logger - INFO - Status Code: 200
+2026-03-19 14:19:33,344 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 1.0273,
+  "longitude": 1.2084,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila"
+  }
+}
+2026-03-19 14:19:33,344 - logger - INFO - >>> Step 2: UPDATE the record (ID: ) <<<
+2026-03-19 14:19:33,344 - logger - INFO - === TEST: UPDATE ===
+2026-03-19 14:19:33,344 - logger - INFO - Method: PUT | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:19:33,347 - logger - INFO - Updated geo location ID: 1
+2026-03-19 14:19:33,348 - logger - INFO - Status Code: 200
+2026-03-19 14:19:33,348 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 1.0273,
+  "longitude": 1.2084,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila"
+  }
+}
+2026-03-19 14:19:33,348 - logger - INFO - 
+2026-03-19 14:19:33,349 - logger - INFO - >>> Step 3: READ the updated record (ID:) - Verify changes <<<
+2026-03-19 14:19:33,349 - logger - INFO - === TEST: READ ===
+2026-03-19 14:19:33,349 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:19:33,351 - logger - INFO - Retrieved geo location ID: 1
+2026-03-19 14:19:33,352 - logger - INFO - Status Code: 200
+2026-03-19 14:19:33,352 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 1.0273,
+  "longitude": 1.2084,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila"
+  }
+}
+2026-03-19 14:19:33,352 - logger - INFO - 
+2026-03-19 14:19:33,352 - logger - INFO - 
+2026-03-19 14:35:40,047 - logger - INFO - Starting address book app
+2026-03-19 14:35:44,163 - logger - INFO - Starting address book app
+2026-03-19 14:35:52,976 - logger - INFO - Starting address book app
+2026-03-19 14:37:22,914 - logger - INFO - Starting address book app
+2026-03-19 14:37:30,919 - logger - INFO - Starting address book app
+2026-03-19 14:38:38,620 - logger - INFO - Starting address book app
+2026-03-19 14:38:48,870 - logger - INFO - Starting CRUD Tests...
+
+2026-03-19 14:38:48,870 - logger - INFO - === TEST: READ ===
+2026-03-19 14:38:48,870 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:38:48,877 - logger - INFO - Retrieved geo location ID: 1
+2026-03-19 14:38:48,878 - logger - INFO - Status Code: 200
+2026-03-19 14:38:48,878 - logger - INFO - Response: {
+  "id": 1,
+  "latitude": 1.0273,
+  "longitude": 1.2084,
+  "address": {
+    "street": "J.P. Laurel Street (Updated)",
+    "city": "Manila"
+  }
+}
+2026-03-19 14:38:48,879 - logger - INFO - >>> Step 2: DELETE the record (ID: 1) <<<
+2026-03-19 14:38:48,879 - logger - INFO - === TEST: DELETE ===
+2026-03-19 14:38:48,879 - logger - INFO - Method: DELETE | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:38:48,892 - logger - INFO - Deleted geo location ID: 1
+2026-03-19 14:38:48,893 - logger - INFO - Status Code: 200
+2026-03-19 14:38:48,893 - logger - INFO - Response: {
+  "message": "Geo location with ID 1 deleted successfully"
+}
+2026-03-19 14:38:48,894 - logger - INFO - 
+2026-03-19 14:38:48,894 - logger - INFO - === TEST: READ ===
+2026-03-19 14:38:48,894 - logger - INFO - Method: GET | URL: http://127.0.0.1:8000/geo-loc/1
+2026-03-19 14:38:48,897 - logger - WARNING - Geo location with ID 1 not found
+2026-03-19 14:38:48,898 - logger - INFO - Status Code: 404
+2026-03-19 14:38:48,898 - logger - ERROR - Error Response: {"detail":"Geo location with ID 1 not found"}
+2026-03-19 14:38:48,898 - logger - INFO - 
+2026-03-19 14:38:48,898 - logger - INFO - 

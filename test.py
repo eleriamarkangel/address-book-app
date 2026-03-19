@@ -7,14 +7,23 @@ BASE_URL = "http://127.0.0.1:8000"
 ENDPOINT = "/geo-loc/"
 
 # Test data payloads
-PAYLOAD_MALACANAN = {
+PAYLOAD = {
     "latitude": 14.5994,
-    "longitude": 120.9842,
+    "longitude": "",
     "address": {
         "street": "J.P. Laurel Street",
         "city": "Manila",
         "country": "Philippines",
         "landmark": "Malacanan Palace"
+    }
+}
+
+PAYLOAD_UPDATED = {
+    "latitude": 1.0273,
+    "longitude": "1.2084",
+    "address": {
+        "street": "J.P. Laurel Street (Updated)",
+        "city": "Manila"
     }
 }
 
@@ -92,29 +101,29 @@ def test_crud(action, payload=None, resource_id=None):
         logger.error(f"Test failed: {e}")
         return None
 
+
+# Just call test_crud() with the action
+# test_crud(CRUD_CREATE, PAYLOAD_MALACANAN)  # Create
+# test_crud(CRUD_READ)                       # Read all
+# test_crud(CRUD_READ, resource_id=1)        # Read one (future)
+# test_crud(CRUD_UPDATE, PAYLOAD_UPDATED, resource_id=1)  # Update (future)
+# test_crud(CRUD_DELETE, resource_id=1)      # Delete (future)
 # ===== RUN TESTS =====
 if __name__ == "__main__":
     logger.info("Starting CRUD Tests...\n")
-    # test_crud(CRUD_CREATE, PAYLOAD_MALACANAN)  # Create
+    verified_data = test_crud(CRUD_READ, resource_id=1)
 
+    # Update the created record
+    logger.info(f">>> Step 2: DELETE the record (ID: {verified_data['id']}) <<<")
+    test_crud(CRUD_DELETE, resource_id=1)
+    logger.info("")
+    
+    # Read the updated record to verify changes
+    verified_data = test_crud(CRUD_READ, resource_id=1)
+    logger.info("")
+    
     # Test READ ALL
-    logger.info(">>> Testing READ ALL operation <<<")
-    all_data = test_crud(CRUD_READ)
+    # logger.info(">>> Testing READ ALL operation END <<<")
+    # all_data = test_crud(CRUD_READ)
     logger.info("")
-    
-    logger.info(">>> Testing READ ONE operation <<<")
-    test_crud(CRUD_READ, resource_id=1)
-    
-    # Test READ by invalid ID
-    logger.info(">>> Testing READ by invalid ID (ID: 9999) <<<")
-    invalid_read = test_crud(CRUD_READ, resource_id=9999)
-    logger.info("")
-    
     logger.info("✓ All tests completed!")
-
-    # Just call test_crud() with the action
-    # test_crud(CRUD_CREATE, PAYLOAD_MALACANAN)  # Create
-    # test_crud(CRUD_READ)                       # Read all
-    # test_crud(CRUD_READ, resource_id=1)        # Read one (future)
-    # test_crud(CRUD_UPDATE, PAYLOAD_NEW, resource_id=1)  # Update (future)
-    # test_crud(CRUD_DELETE, resource_id=1)      # Delete (future)

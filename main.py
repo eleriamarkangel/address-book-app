@@ -1,7 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from model import Address
-from model.constants import INSERT_GEO_LOC_SQL, GET_ALL_GEO_LOC_SQL, GET_GEO_LOC_BY_ID_SQL
+from model.constants import INSERT_GEO_LOC_SQL, GET_ALL_GEO_LOC_SQL, GET_GEO_LOC_BY_ID_SQL, UPDATE_GEO_LOC_SQL, DELETE_GEO_LOC_SQL
 from logger import logger
 import sqlite3
 import json
@@ -20,7 +20,7 @@ logger.info("Starting address book app")
 def create_geo_loc(data: Address):
     # Validate that all fields are present
     if not all([data.latitude, data.longitude, data.address]):
-        raise HTTPException(status_code=400, detail="Missing required fields: latitude, longitude, address")
+        raise HTTPException(status_code=400, detail="Missing required fields to create: latitude, longitude, address")
 
     try:
         conn = sqlite3.connect(DB_NAME)
@@ -40,7 +40,7 @@ def create_geo_loc(data: Address):
     finally:
         conn.close()
 
-# READ endpoint
+# READ endpoint (all)
 @app.get("/geo-loc/")
 def read_all_geo_loc():
     try:
@@ -92,6 +92,68 @@ def read_geo_loc(geo_loc_id: int):
         raise
     except Exception as e:
         logger.error(f"Server error during geo_loc retrieval: {e}")
+        raise HTTPException(status_code=500, detail=f"Internal server error: {e}")
+    finally:
+        conn.close()
+
+# UPDATE endpoint
+@app.put("/geo-loc/{geo_loc_id}")
+def update_geo_loc(geo_loc_id: int, data: Address):
+    # Validate that all fields are present
+    if not all([data.latitude, data.longitude, data.address]):
+        raise HTTPException(status_code=400, detail="Missing required fields to update: latitude, longitude, address")
+    
+    try:
+        conn = sqlite3.connect(DB_NAME)
+        cursor = conn.cursor()
+        
+        # Check if record exists
+        cursor.execute(GET_GEO_LOC_BY_ID_SQL, (geo_loc_id,))
+        existing_row = cursor.fetchone()
+        
+        if not existing_row:
+            logger.warning(f"Geo location with ID {geo_loc_id} not found for update")
+            raise HTTPException(status_code=404, detail=f"Geo location with ID {geo_loc_id} not found")
+        
+        # Update the record
+        cursor.execute(UPDATE_GEO_LOC_SQL, (data.latitude, data.longitude, json.dumps(data.address), geo_loc_id))
+        conn.commit()
+        
+        logger.info(f"Updated geo location ID: {geo_loc_id}")
+        return {"id": geo_loc_id, "latitude": data.latitude, "longitude": data.longitude, "address": data.address}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Server error during geo_loc update: {e}")
+        raise HTTPException(status_code=500, detail=f"Internal server error: {e}")
+    finally:
+        conn.close()
+
+# DELETE endpoint
+@app.delete("/geo-loc/{geo_loc_id}")
+def delete_geo_loc(geo_loc_id: int):
+    try:
+        conn = sqlite3.connect(DB_NAME)
+        cursor = conn.cursor()
+        
+        # Check if record exists
+        cursor.execute(GET_GEO_LOC_BY_ID_SQL, (geo_loc_id,))
+        existing_row = cursor.fetchone()
+        
+        if not existing_row:
+            logger.warning(f"Geo location with ID {geo_loc_id} not found for deletion")
+            raise HTTPException(status_code=404, detail=f"Geo location with ID {geo_loc_id} not found")
+        
+        # Delete the record
+        cursor.execute(DELETE_GEO_LOC_SQL, (geo_loc_id,))
+        conn.commit()
+        
+        logger.info(f"Deleted geo location ID: {geo_loc_id}")
+        return {"message": f"Geo location with ID {geo_loc_id} deleted successfully"}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Server error during geo_loc deletion: {e}")
         raise HTTPException(status_code=500, detail=f"Internal server error: {e}")
     finally:
         conn.close()
