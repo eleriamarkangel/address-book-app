@@ -26,10 +26,22 @@ def create_geo_loc(data: Address):
     try:
         conn = sqlite3.connect(DB_NAME)
         cursor = conn.cursor()
+        
+        # Check if location with same coordinates already exists
+        cursor.execute("SELECT id FROM geo_loc WHERE latitude = ? AND longitude = ?", (round(data.latitude, 8), round(data.longitude, 8)))
+        existing = cursor.fetchone()
+        logger.info(f"Creating new geo location at ({data.latitude}, {data.longitude})")
+        if existing:
+            logger.warning(f"Duplicate location attempt: ({data.latitude}, {data.longitude}) already exists with ID {existing[0]}")
+            raise HTTPException(status_code=409, detail=f"Location at coordinates ({data.latitude}, {data.longitude}) already exists with ID {existing[0]}")
+        
         cursor.execute(INSERT_GEO_LOC_SQL, (data.latitude, data.longitude, json.dumps(data.address)))
         conn.commit()
         new_id = cursor.lastrowid
+        logger.info(f"Created new geo location ID {new_id} at ({data.latitude}, {data.longitude})")
         return {"id": new_id, "latitude": data.latitude, "longitude": data.longitude, "address": data.address}
+    except HTTPException:
+        raise
     except sqlite3.IntegrityError as e:
         # Specific database constraint errors
         logger.error(f"Database integrity error: {e}")
@@ -228,3 +240,7 @@ def delete_geo_loc(geo_loc_id: int):
         raise HTTPException(status_code=500, detail=f"Internal server error: {e}")
     finally:
         conn.close()
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="127.0.0.1", port=8000, reload=True)

@@ -18,3 +18,6 @@ DELETE_GEO_LOC_SQL = """
 DELETE FROM geo_loc WHERE id = ?
 """
 
+# ===== GLOBAL VARIABLES =====
+BASE_URL = "http://127.0.0.1:8000"
+ENDPOINT = "/geo-loc/"
