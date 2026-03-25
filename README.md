@@ -50,6 +50,11 @@ An address book application where API users can create, update, delete addresses
 
 ## Running the Application
 
+1. **Activating live reload (or FastAPI UI):**
+   ```bash
+   uvicorn main:app --reload
+   ```
+   
 ### Start the API Server
 
 With the virtual environment activated, run:
